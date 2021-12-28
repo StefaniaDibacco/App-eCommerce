@@ -19,7 +19,6 @@ export class ProductosAtlasDAO implements ProductBaseClass {
   constructor(local: boolean = false) {
     if (local)
       this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
-    // this.srv = `mongodb+srv://${Config.MONGO_ATLAS_USER}:${Config.MONGO_ATLAS_PASSWORD}@${Config.MONGO_ATLAS_CLUSTER}/${Config.MONGO_ATLAS_DBNAME}?retryWrites=true&w=majority`;
     else this.srv = Config.MONGO_ATLAS_SRV;
     mongoose.connect(this.srv);
     this.productos = mongoose.model<ProductI>('producto', productsSchema);

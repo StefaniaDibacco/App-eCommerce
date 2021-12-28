@@ -23,10 +23,6 @@ const usersSchema = new mongoose.Schema<UserI>({
     required: true,
     unique: true,
   },
-  dir: {
-    type: String,
-    required: true,
-  },
   cellphone: {
     type: String,
     required: true,
@@ -55,8 +51,9 @@ export class UsuariosAtlasDAO implements UserBaseClass {
   private users;
 
   constructor(local: boolean = false) {
-    if (local) this.srv = Config.MONGO_LOCAL_DBNAME;
-    else this.srv = Config.MONGO_ATLAS_DBNAME;
+    if (local)
+      this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
+    else this.srv = Config.MONGO_ATLAS_SRV;
     mongoose.connect(this.srv);
     this.users = mongoose.model<UserI>('user', usersSchema);
   }

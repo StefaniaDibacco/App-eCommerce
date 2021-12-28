@@ -8,7 +8,6 @@ export const userJoiSchema = Joi.object({
   lastName: Joi.string().min(3).max(15).required(),
   age: Joi.number().required(),
   username: Joi.string().min(3).max(10).required(),
-  dir: Joi.string().min(3).max(25).required(),
   cellphone: Joi.string().regex(INTER).required(),
   email: Joi.string().email().required(),
   password: Joi.string().regex(PASS_RE).required(),
@@ -31,7 +30,6 @@ export interface UserI {
   lastName: string;
   username: string;
   age: number;
-  dir: string;
   cellphone: string;
   email: string;
   password: string;

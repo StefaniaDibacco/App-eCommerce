@@ -49,7 +49,7 @@ export class CartsAtlasDAO implements CartBaseClass {
 
   productExist(cart: CartI, productId: string): boolean {
     const index = cart.products.findIndex(
-      (aProduct) => aProduct._id == productId
+      (aProduct) => aProduct._id === productId
     );
 
     if (index < 0) return false;
@@ -62,7 +62,7 @@ export class CartsAtlasDAO implements CartBaseClass {
     if (!cart) throw new Error('Cart not found');
 
     const index = cart.products.findIndex(
-      (aProduct) => aProduct._id == product._id
+      (aProduct) => aProduct._id === product._id
     );
 
     if (index < 0) cart.products.push(product);
@@ -78,7 +78,7 @@ export class CartsAtlasDAO implements CartBaseClass {
     if (!cart) throw new Error('Cart not found');
 
     const index = cart.products.findIndex(
-      (aProduct) => aProduct._id == product._id
+      (aProduct) => aProduct._id === product._id
     );
 
     if (index < 0) throw new Error('Product not found');
