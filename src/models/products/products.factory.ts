@@ -1,17 +1,14 @@
-import { ProductosMemDAO } from './DAOs/memory';
+/* eslint-disable no-case-declarations */
+/* eslint-disable no-unused-vars */
 import { ProductosFSDAO } from './DAOs/fs';
 import { ProductosAtlasDAO } from './DAOs/mongo';
 import { Logger } from '../../services/logger';
 import path from 'path';
 
 export enum TipoPersistencia {
-  Memoria = 'MEM',
   FileSystem = 'FS',
-  // MYSQL = 'MYSQL',
-  // SQLITE3 = 'SQLITE3',
   LocalMongo = 'LOCAL-MONGO',
   MongoAtlas = 'MONGO-ATLAS',
-  // Firebase = 'FIREBASE',
 }
 
 export class NoticiasFactoryDAO {
@@ -19,7 +16,6 @@ export class NoticiasFactoryDAO {
     switch (tipo) {
       case TipoPersistencia.FileSystem:
         Logger.info('Retornando Instancia Products FS');
-        // eslint-disable-next-line no-case-declarations
         const filePath = path.resolve(__dirname, '../../DAOs/productos.json');
         return new ProductosFSDAO(filePath);
 
@@ -33,7 +29,7 @@ export class NoticiasFactoryDAO {
 
       default:
         Logger.info('Retornando Instancia Products Default');
-        return new ProductosMemDAO();
+        return new ProductosAtlasDAO();
     }
   }
 }

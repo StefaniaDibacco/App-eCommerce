@@ -1,5 +1,5 @@
 {
-  "name": "14-entregable",
+  "name": "proyecto-final",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StefaniaDibacco/14-Entregable.git"
+    "url": "git+https://github.com/StefaniaDibacco/App-eCommerce"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/StefaniaDibacco/14-Entregable/issues"
+    "url": "https://github.com/StefaniaDibacco/App-eCommerce/issues"
   },
-  "homepage": "https://github.com/StefaniaDibacco/14-Entregable#readme",
+  "homepage": "https://github.com/StefaniaDibacco/App-eCommerce#readme",
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.13",

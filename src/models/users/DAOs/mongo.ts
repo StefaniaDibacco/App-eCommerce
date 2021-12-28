@@ -40,10 +40,6 @@ const usersSchema = new mongoose.Schema<UserI>({
     type: String,
     required: true,
   },
-  photo: {
-    type: String,
-    required: true,
-  },
 });
 
 usersSchema.pre('save', async function (next) {
@@ -59,9 +55,8 @@ export class UsuariosAtlasDAO implements UserBaseClass {
   private users;
 
   constructor(local: boolean = false) {
-    if (local)
-      this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
-    else this.srv = Config.MONGO_ATLAS_SRV;
+    if (local) this.srv = Config.MONGO_LOCAL_DBNAME;
+    else this.srv = Config.MONGO_ATLAS_DBNAME;
     mongoose.connect(this.srv);
     this.users = mongoose.model<UserI>('user', usersSchema);
   }

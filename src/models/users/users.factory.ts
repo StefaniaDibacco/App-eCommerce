@@ -1,16 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { UsuariosAtlasDAO } from './DAOs/mongo';
-// import path from 'path';
 import { Logger } from '../../services/logger';
 
 export enum TipoPersistencia {
-  Memoria = 'MEM',
-  FileSystem = 'FS',
-  MYSQL = 'MYSQL',
-  SQLITE3 = 'SQLITE3',
   LocalMongo = 'LOCAL-MONGO',
   MongoAtlas = 'MONGO-ATLAS',
-  Firebase = 'FIREBASE',
 }
 
 export class UserFactoryDAO {
