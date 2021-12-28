@@ -1,0 +1,478 @@
+{
+	"info": {
+		"_postman_id": "e4c397f6-c55a-4817-a95c-b244a5f55f0a",
+		"name": "Coder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tercer entrega",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "/api/user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "firstName",
+											"value": "Ivan",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "leonel",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "25",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "meca4",
+											"type": "text"
+										},
+										{
+											"key": "dir",
+											"value": "calle Falsa 123",
+											"type": "text"
+										},
+										{
+											"key": "cellphone",
+											"value": "+5491130881719",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mecalux4@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Coder.159",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"value": "https://www.facebook.com/photo/?fbid=3123634634341030&set=a.145757185462138",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/user",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"age\":31,\r\n  \"username\": \"stefy\",\r\n  \"dir\": \"calle Falsa 123\",\r\n  \"cellphone\":\"+5491167275127\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"password\": \"Coder.159\",\r\n  \"photo\":\"https://www.facebook.com/photo/?fbid=10225627934101461&set=a.1547542284788\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/user/618d266867b662d892c4e85e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"user",
+										"618d266867b662d892c4e85e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login/singup",
+					"item": [
+						{
+							"name": "/api/auth/login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/auth/signup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "products",
+					"item": [
+						{
+							"name": "api/products/id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/products/id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Pinceles\",\r\n    \"price\": 1900,\r\n    \"thumbnail\": \"http\",\r\n    \"stock\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/6139442853aefeac174acdbc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"6139442853aefeac174acdbc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/products/id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Pinceles\",\r\n    \"price\": 1900,\r\n    \"thumbnail\": \"http\",\r\n    \"stock\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/6139442853aefeac174acdbc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"6139442853aefeac174acdbc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/products",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Carts",
+					"item": [
+						{
+							"name": "api/cart/listar",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":{\r\n        \"_id\": \"618d266867b662d892c4e85e\",\r\n        \"username\": \"stefy\",\r\n        \"email\": \"stefania.dibacco@gmail.com\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cart/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cart",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/cart/agregar/id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"6139442953aefeac174acdbd\",\r\n    \"productAmount\":15\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cart/agregar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cart",
+										"agregar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/cart/agregar/id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"6139442953aefeac174acdbd\",\r\n    \"productAmount\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cart/borrar/618d266867b662d892c4e861",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cart",
+										"borrar",
+										"618d266867b662d892c4e861"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
