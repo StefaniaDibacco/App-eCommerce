@@ -7,12 +7,12 @@ const router = Router();
 router.get('/:id?', asyncHandler(UserController.getUsers));
 
 router.post(
-  '/',
+  '/singup',
   UserController.validateUserInput,
   asyncHandler(UserController.addUser)
 );
 
-router.put('/', asyncHandler(UserController.updateUser));
+router.put('/:id', asyncHandler(UserController.updateUser));
 
 router.delete('/:id', asyncHandler(UserController.deleteUser));
 

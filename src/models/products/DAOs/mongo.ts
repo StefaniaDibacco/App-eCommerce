@@ -8,8 +8,27 @@ import {
 import Config from '../../../config';
 
 export const productsSchema = new mongoose.Schema<ProductI>({
-  nombre: String,
-  precio: Number,
+  nombre: {
+    type: String,
+    required: true,
+  },
+  descripcion: {
+    type: String,
+    required: true,
+  },
+  categoria: {
+    type: String,
+    required: true,
+  },
+  precio: {
+    type: Number,
+    required: true,
+  },
+  fotos: [{ type: String }],
+  stock: {
+    type: Number,
+    required: true,
+  },
 });
 
 export class ProductosAtlasDAO implements ProductBaseClass {
@@ -58,9 +77,11 @@ export class ProductosAtlasDAO implements ProductBaseClass {
   }
 
   async query(options: ProductQuery): Promise<ProductI[]> {
-    let query: ProductQuery = {};
+    const query: ProductQuery = {};
 
     if (options.nombre) query.nombre = options.nombre;
+
+    if (options.categoria) query.categoria = options.categoria;
 
     if (options.precio) query.precio = options.precio;
 

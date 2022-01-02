@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
-// eslint-disable-next-line no-unused-vars
-import { NewUserI, UserI, UserBaseClass, UserQuery } from '../users.interface';
+import { NewUserI, UserI, UserBaseClass } from '../users.interface';
+import { CartI, ProductCart, CartBaseClass } from '../../carts/cart.interface';
 import Config from '../../../config';
 import { EmailService } from '../../../services/email';
 
@@ -16,12 +16,7 @@ const usersSchema = new mongoose.Schema<UserI>({
   },
   age: {
     type: Number,
-    required: true,
-  },
-  username: {
-    type: String,
-    required: true,
-    unique: true,
+    required: false,
   },
   cellphone: {
     type: String,
@@ -34,6 +29,10 @@ const usersSchema = new mongoose.Schema<UserI>({
   },
   password: {
     type: String,
+    required: true,
+  },
+  admin: {
+    type: Boolean,
     required: true,
   },
 });
@@ -55,6 +54,7 @@ export class UsuariosAtlasDAO implements UserBaseClass {
       this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
     else this.srv = Config.MONGO_ATLAS_SRV;
     mongoose.connect(this.srv);
+    console.log(this.srv, local);
     this.users = mongoose.model<UserI>('user', usersSchema);
   }
 
@@ -74,6 +74,7 @@ export class UsuariosAtlasDAO implements UserBaseClass {
     }
   }
 
+  // YA NO PIDE CREO MANDAR UN EMAL PARA NOTIFICAR USUARIO NUEVO
   async add(data: NewUserI): Promise<UserI> {
     // eslint-disable-next-line new-cap
     const newProduct = new this.users(data);

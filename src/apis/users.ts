@@ -22,8 +22,8 @@ class User {
     return this.users.get();
   }
 
-  async addUser(productData: NewUserI): Promise<UserI> {
-    const newUser = await this.users.add(productData);
+  async addUser(userData: NewUserI): Promise<UserI> {
+    const newUser = await this.users.add(userData);
     await CartAPI.createCart(newUser._id);
     return newUser;
   }

@@ -10,7 +10,7 @@ import { Logger } from './logger';
 
 const StoreOptions = {
   store: MongoStore.create({
-    mongoUrl: Config.MONGO_ATLAS_SRV,
+    mongoUrl: `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`,
   }),
 
   secret: Config.SESSION_SECRET,

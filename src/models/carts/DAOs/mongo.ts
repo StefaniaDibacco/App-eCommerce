@@ -8,28 +8,60 @@ const cartSchema = new mongoose.Schema<CartI>({
     required: true,
     unique: true,
   },
-  products: [
+  productos: [
     {
-      _id: Schema.Types.ObjectId,
-      amount: Number,
+      _id: {
+        type: Schema.Types.ObjectId,
+        require: true,
+      },
+      cantidad: {
+        type: Number,
+        require: true,
+      },
+      timeStamps: {
+        type: Number,
+        require: true,
+      },
     },
   ],
+  direccion: {
+    calle: {
+      type: String,
+      required: true,
+    },
+    altura: {
+      type: Number,
+      require: true,
+    },
+    codigoPostal: {
+      type: Number,
+      required: true,
+    },
+    piso: {
+      type: String,
+      required: false,
+    },
+    departamento: {
+      type: String,
+      required: false,
+    },
+  },
 });
 
 export class CartsAtlasDAO implements CartBaseClass {
   private srv: string;
-  private carts;
+  private Carts;
 
   constructor(local: boolean = false) {
     if (local)
       this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
     else this.srv = Config.MONGO_ATLAS_SRV;
     mongoose.connect(this.srv);
-    this.carts = mongoose.model<CartI>('cart', cartSchema);
+    this.Carts = mongoose.model<CartI>('cart', cartSchema);
   }
 
   async get(userId: string): Promise<CartI> {
-    const result = await this.carts.findOne({ userId });
+    const result = await this.Carts.findOne({ userId });
 
     if (!result) throw new Error('id not found');
 
@@ -37,9 +69,9 @@ export class CartsAtlasDAO implements CartBaseClass {
   }
 
   async createCart(userId: string): Promise<CartI> {
-    const newCart = new this.carts({
+    const newCart = new this.Carts({
       userId,
-      products: [],
+      productos: [],
     });
 
     await newCart.save();
@@ -48,7 +80,7 @@ export class CartsAtlasDAO implements CartBaseClass {
   }
 
   productExist(cart: CartI, productId: string): boolean {
-    const index = cart.products.findIndex(
+    const index = cart.productos.findIndex(
       (aProduct) => aProduct._id === productId
     );
 
@@ -58,15 +90,15 @@ export class CartsAtlasDAO implements CartBaseClass {
   }
 
   async addProduct(cartId: string, product: ProductCart): Promise<CartI> {
-    const cart = await this.carts.findById(cartId);
+    const cart = await this.Carts.findById(cartId);
     if (!cart) throw new Error('Cart not found');
 
-    const index = cart.products.findIndex(
+    const index = cart.productos.findIndex(
       (aProduct) => aProduct._id === product._id
     );
 
-    if (index < 0) cart.products.push(product);
-    else cart.products[index].amount += product.amount;
+    if (index < 0) cart.productos.push(product);
+    else cart.productos[index].cantidad += product.cantidad;
 
     await cart.save();
 
@@ -74,18 +106,18 @@ export class CartsAtlasDAO implements CartBaseClass {
   }
 
   async deleteProduct(cartId: string, product: ProductCart): Promise<CartI> {
-    const cart = await this.carts.findById(cartId);
+    const cart = await this.Carts.findById(cartId);
     if (!cart) throw new Error('Cart not found');
 
-    const index = cart.products.findIndex(
+    const index = cart.productos.findIndex(
       (aProduct) => aProduct._id === product._id
     );
 
     if (index < 0) throw new Error('Product not found');
 
-    if (cart.products[index].amount <= product.amount)
-      cart.products.splice(index, 1);
-    else cart.products[index].amount -= product.amount;
+    if (cart.productos[index].cantidad <= product.cantidad)
+      cart.productos.splice(index, 1);
+    else cart.productos[index].cantidad -= product.cantidad;
 
     await cart.save();
     return cart;
