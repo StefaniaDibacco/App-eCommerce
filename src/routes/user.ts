@@ -1,10 +1,11 @@
 import asyncHandler from 'express-async-handler';
 import { Router } from 'express';
 import { UserController } from '../controllers/users';
+import { checkAuthToken } from '../middleware/auth';
 
 const router = Router();
 
-router.get('/:id?', asyncHandler(UserController.getUsers));
+router.get('/:id?', checkAuthToken, asyncHandler(UserController.getUsers));
 
 router.post(
   '/singup',

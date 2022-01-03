@@ -1,7 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 import Config from '../../../config';
 import { CartI } from '../../carts/cart.interface';
-import { ProductI } from '../../products/products.interface';
 import { OrdenI, OrdenBaseClass, NewOrden, ItemsI } from '../order.interface';
 
 const OrderSchema = new mongoose.Schema<OrdenI>({
@@ -98,7 +97,7 @@ export class OrderAtlasDAO implements OrdenBaseClass {
     return await newOrden.save();
   }
 
-  async getOrders(userId: string, orderId: string) {
+  async getOrder(userId: string, orderId: string) {
     let query = {};
     if (!orderId) {
       query = { userId };
@@ -113,11 +112,11 @@ export class OrderAtlasDAO implements OrdenBaseClass {
     /* si no existe la orden */
     if (!orden) throw new Error('Orden dont exist');
     if (orden.estado !== 'Generada') throw new Error('Orden no generada');
-    const ordenUpdate = await this.Order.updateOne(
+    const ordenUpdate: OrdenI = await this.Order.findOneAndUpdate(
       { _id: orderId },
       { estado: 'Compledata' }
     );
-    /* Mandar mail */
+    /* TODO Mandar mail */
     return ordenUpdate;
   }
 }

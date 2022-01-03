@@ -19,4 +19,6 @@ router.delete(
   asyncHandler(CartController.deleteProduct)
 );
 
+router.post('/submit', [isLoggedIn], asyncHandler(CartController.submit));
+
 export default router;

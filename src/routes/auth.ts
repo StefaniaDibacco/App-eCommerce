@@ -1,10 +1,12 @@
 import { Router } from 'express';
 import passport from '../middleware/admin';
+import { getAuthToken } from '../middleware/auth';
 
 const router = Router();
 
 router.post('/login', passport.authenticate('login'), function (req, res) {
-  res.json({ msg: 'Welcome!', user: req.user });
+  const token = getAuthToken(req.body.email);
+  return res.json({ msg: 'Welcome!', user: req.user, token });
 });
 
 router.post('/signup', (req, res, next) => {

@@ -43,6 +43,8 @@ class prodAPI {
   async query(options: ProductQuery) {
     return await this.productos.query(options);
   }
+
+  /* TODO cargar las imagenes */
 }
 
 // eslint-disable-next-line new-cap

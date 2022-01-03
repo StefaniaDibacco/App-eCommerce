@@ -7,19 +7,19 @@ export enum TipoPersistencia {
   MongoAtlas = 'MONGO-ATLAS',
 }
 
-export class UserFactoryDAO {
+export class OrdenFactoryDAO {
   static get(tipo: TipoPersistencia) {
     switch (tipo) {
       case TipoPersistencia.MongoAtlas:
-        Logger.info('Retornando Instancia Users Mongo Atlas');
+        Logger.info('Retornando Instancia Orden Mongo Atlas');
         return new OrderAtlasDAO();
 
       case TipoPersistencia.LocalMongo:
-        Logger.info('Retornando Instancia Users Mongo Local');
+        Logger.info('Retornando Instancia Orden Mongo Local');
         return new OrderAtlasDAO(true);
 
       default:
-        Logger.info('Retornando Instancia Users Default');
+        Logger.info('Retornando Instancia Orden Default');
         return new OrderAtlasDAO();
     }
   }

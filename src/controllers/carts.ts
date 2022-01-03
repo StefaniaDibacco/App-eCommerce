@@ -1,4 +1,5 @@
 import { CartAPI } from '../apis/carts';
+import { OrdenApi } from '../apis/order';
 import { Request, Response } from 'express';
 import { productsAPI } from '../apis/productos';
 import { CartI } from '../models/carts/cart.interface';
@@ -7,7 +8,7 @@ class Cart {
   async getCartByUser(req: Request, res: Response) {
     const user: any = req.body.user;
     const cart = await CartAPI.getCart(user._id);
-    res.json(cart);
+    return res.json(cart);
   }
 
   async addProduct(req: Request, res: Response) {
@@ -60,7 +61,9 @@ class Cart {
     const cart = await CartAPI.getCart(user._id);
     if (!cart.productos)
       return res.status(400).json({ msg: 'Invalid products cart empty' });
-    const order = await OrderApi.createOrder(cart);
+    const order = await OrdenApi.create(cart);
+
+    return order;
   }
 }
 

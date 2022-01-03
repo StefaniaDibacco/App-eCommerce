@@ -1,5 +1,6 @@
 import { Schema } from 'mongoose';
 import Joi from 'joi';
+import { CartI } from '../carts/cart.interface';
 
 export const ordenJoiSchema = Joi.object({
   _id: Joi.string(),
@@ -42,8 +43,10 @@ export interface NewOrden {
 }
 
 export interface OrdenBaseClass {
-  // get(id: string): Promise<CartI>;
-  // createCart(userId: string): Promise<CartI>;
-  // addProduct(cartId: string, product: ProductCart): Promise<CartI>;
-  // deleteProduct(cartId: string, product: ProductCart): Promise<CartI>;
+  createOrder(carrito: CartI): Promise<OrdenI>;
+  getOrder(
+    userId: string,
+    orderId: string
+  ): Promise<OrdenI> | Promise<OrdenI[]>;
+  completeOrder(orderId: string): Promise<OrdenI>;
 }
