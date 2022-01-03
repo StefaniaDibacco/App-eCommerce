@@ -29,7 +29,7 @@ class Producto {
 
   async getProducts(req: Request, res: Response) {
     const { id } = req.params;
-    const { nombre, precio } = req.query;
+    const { nombre, categoria } = req.query;
     if (id) {
       const result = await productsAPI.getProducts(id);
       if (!result.length)
@@ -46,7 +46,7 @@ class Producto {
 
     if (nombre) query.nombre = nombre.toString();
 
-    if (precio) query.precio = Number(precio);
+    if (categoria) query.categoria = categoria.toString();
 
     if (Object.keys(query).length) {
       return res.json({
@@ -81,10 +81,19 @@ class Producto {
 
   async deleteProducts(req: Request, res: Response) {
     const id = req.params.id;
-    await productsAPI.deleteProduct(id);
-    res.json({
-      msg: 'producto borrado',
-    });
+
+    if (id) {
+      const result = await productsAPI.deleteProduct(id);
+      console.log(result);
+      if (!result)
+        return res.status(404).json({
+          data: 'objeto no encontrado',
+        });
+
+      return res.json({
+        data: 'objeto borrado',
+      });
+    }
   }
 }
 

@@ -1,0 +1,60 @@
+{"level":"error","message":"HUBO UN ERROR cart validation failed: direccion.codigoPostal: Path `direccion.codigoPostal` is required., direccion.calle: Path `direccion.calle` is required.","timestamp":"2022-01-02T03:42:29.785Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T03:42:53.176Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T03:49:06.056Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T03:49:26.731Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T03:51:09.298Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T03:51:35.430Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T03:52:38.305Z"}
+{"level":"error","message":"HUBO UN ERROR cart validation failed: direccion.codigoPostal: Path `direccion.codigoPostal` is required., direccion.calle: Path `direccion.calle` is required.","timestamp":"2022-01-02T03:55:40.072Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T04:01:09.664Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T04:01:31.158Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T04:04:53.506Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T04:05:43.985Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T04:05:48.916Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T04:33:23.808Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T04:34:00.400Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T04:36:32.759Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:40:06.875Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:40:14.980Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:40:18.036Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:40:27.630Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:41:02.338Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:41:13.404Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:41:54.670Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:42:00.255Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:45:29.463Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:45:33.796Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:51:11.094Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:52:37.084Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T04:57:33.108Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T05:01:47.205Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T05:02:27.530Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T05:02:55.557Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T05:03:00.703Z"}
+{"level":"error","message":"HUBO UN ERROR Failed to deserialize user out of session","timestamp":"2022-01-02T05:03:16.050Z"}
+{"level":"error","message":"HUBO UN ERROR Cannot read property '_id' of undefined","timestamp":"2022-01-02T05:06:08.979Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T05:07:44.667Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T05:08:00.808Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T14:45:01.572Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T14:45:23.429Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T14:47:19.877Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T14:48:10.633Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.users index: username_1 dup key: { username: null }","timestamp":"2022-01-02T14:50:37.498Z"}
+{"level":"error","message":"HUBO UN ERROR user validation failed: admin: Path `admin` is required.","timestamp":"2022-01-02T15:22:47.400Z"}
+{"level":"error","message":"HUBO UN ERROR Unexpected token , in JSON at position 223","timestamp":"2022-01-02T15:26:17.921Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T16:33:13.377Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T16:33:49.588Z"}
+{"level":"error","message":"HUBO UN ERROR Cast to Number failed for value \"NaN\" (type number) at path \"stock\"","timestamp":"2022-01-02T19:33:45.822Z"}
+{"level":"error","message":"HUBO UN ERROR Cast to Number failed for value \"NaN\" (type number) at path \"stock\"","timestamp":"2022-01-02T19:36:04.219Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T19:53:42.043Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T19:54:04.805Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T19:55:25.224Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T19:56:04.044Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T19:57:44.629Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T19:59:20.059Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T19:59:25.472Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T20:00:43.743Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T20:02:01.441Z"}
+{"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T20:03:16.423Z"}
+{"level":"error","message":"HUBO UN ERROR Product not found","timestamp":"2022-01-02T20:08:57.012Z"}
+{"level":"error","message":"HUBO UN ERROR Product not found","timestamp":"2022-01-02T20:09:43.870Z"}

@@ -10,7 +10,9 @@ export const ordenJoiSchema = Joi.object({
     precio: Joi.number().required(),
   }).required(),
   timeStamp: Joi.number().required(),
-  estado: Joi.string().required(),
+  estado: Joi.string()
+    .required()
+    .valid('Generado', 'Pagado', 'Enviando', 'Finalizado'),
   total: Joi.number().required(),
 });
 
@@ -19,14 +21,14 @@ export type ObjectId = Schema.Types.ObjectId | string;
 export interface ItemsI {
   productId: string;
   cantidad: number;
-  precio: number;
+  precio?: number;
 }
 
 export interface OrdenI {
   _id?: ObjectId;
   userId: ObjectId;
   items: ItemsI[];
-  timeStamp: number;
+  timeStamp?: number;
   estado: string;
   total: number;
 }
@@ -35,6 +37,8 @@ export interface NewOrden {
   items: ItemsI[];
   userId: ObjectId;
   total: number;
+  timeStamp?: number;
+  estado: string;
 }
 
 export interface OrdenBaseClass {

@@ -37,7 +37,7 @@ class prodAPI {
   }
 
   async deleteProduct(id: string) {
-    await this.productos.delete(id);
+    return await this.productos.delete(id);
   }
 
   async query(options: ProductQuery) {

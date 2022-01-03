@@ -11,7 +11,7 @@ export const userJoiSchema = Joi.object({
   cellphone: Joi.string().regex(INTER).required(),
   email: Joi.string().email().required(),
   password: Joi.string().regex(PASS_RE).required(),
-  admin: Joi.boolean().required(),
+  admin: Joi.boolean().optional().default(false),
 }).unknown();
 
 export interface NewUserI {
@@ -21,7 +21,7 @@ export interface NewUserI {
   cellphone: string;
   email: string;
   password: string;
-  admin: boolean;
+  admin?: boolean;
   direccion: DireccionI;
 }
 

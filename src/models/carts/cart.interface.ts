@@ -14,9 +14,10 @@ export const cartJoiSchema = Joi.object({
     .required(),
   direccion: Joi.object({
     calle: Joi.string().required(),
+    altura: Joi.number().required(),
     codigoPostal: Joi.number().required(),
-    piso: Joi.string(),
-    departamento: Joi.number(),
+    piso: Joi.string().optional(),
+    departamento: Joi.number().optional(),
   }).required(),
 });
 
@@ -25,11 +26,13 @@ export type productReference = Schema.Types.ObjectId | string;
 export interface ProductCart {
   cantidad: number;
   _id: string;
-  timeStamps: number;
+  timeStamps?: number;
+  precio?: number;
 }
 
 export interface DireccionI {
   calle: string;
+  altura: number;
   codigoPostal: number;
   piso?: string;
   departamento?: string;

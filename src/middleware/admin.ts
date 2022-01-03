@@ -9,10 +9,10 @@ import { UserAPI } from '../apis/users';
 import { userJoiSchema } from '../models/users/users.interface';
 import { Logger } from '../services/logger';
 
-const admin = true;
-
 export const checkAdmin = (req: Request, res: Response, next: NextFunction) => {
   Logger.info('EJECUTANDO MIDDLEWARE');
+  const user: any = req.user;
+  const { admin } = user;
   if (admin) next();
   else {
     res.status(401).json({
@@ -22,38 +22,38 @@ export const checkAdmin = (req: Request, res: Response, next: NextFunction) => {
 };
 
 const strategyOptions: IStrategyOptionsWithRequest = {
-  usernameField: 'username',
+  usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true,
 };
 
 const loginFunc: VerifyFunctionWithRequest = async (
   req,
-  username,
+  email,
   password,
   done
 ) => {
-  const user = await UserAPI.query(username);
+  const user = await UserAPI.query(email);
 
   if (!user) {
-    Logger.warn(`Login Fail for username ${username}: User does not exist`);
+    Logger.warn(`Login Fail for email ${email}: User does not exist`);
     return done(null, false, { message: 'User does not exist' });
   }
 
-  const check = await UserAPI.ValidatePassword(username, password);
+  const check = await UserAPI.ValidatePassword(email, password);
 
   if (!check) {
-    Logger.warn(`Login Fail for username ${username}: Password is not valid`);
+    Logger.warn(`Login Fail for email ${email}: Password is not valid`);
     return done(null, false, { message: 'Password is not valid.' });
   }
 
-  Logger.info(`User ${username} logged in at ${new Date()}`);
+  Logger.info(`User ${email} logged in at ${new Date()}`);
   return done(null, user);
 };
 
 const signUpFunc: VerifyFunctionWithRequest = async (
   req,
-  username,
+  email,
   password,
   done
 ) => {
@@ -61,14 +61,14 @@ const signUpFunc: VerifyFunctionWithRequest = async (
     await userJoiSchema.validateAsync(req.body);
 
     const { email } = req.body;
-    const user = await UserAPI.query(username, email);
+    const user = await UserAPI.query(email);
 
     if (user) {
       Logger.warn(
-        `Signup Fail for username ${username}: Username or email already exists`
+        `Signup Fail for email ${email}: email or email already exists`
       );
       return done(null, {
-        error: `Invalid Username/email`,
+        error: `Invalid email/email`,
       });
     } else {
       const newUser = await UserAPI.addUser(req.body);
@@ -107,6 +107,7 @@ export const isLoggedIn = (req: Request, res: Response, done: NextFunction) => {
 };
 
 export const isAdmin = (req: Request, res: Response, done: NextFunction) => {
+  console.log(req.user);
   if (!req.user) return res.status(401).json({ msg: 'Unathorized' });
 
   done();

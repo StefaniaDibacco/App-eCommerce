@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { NewUserI, UserI, UserQuery } from '../models/users/users.interface';
 import {
   UserFactoryDAO,
   TipoPersistencia,
 } from '../models/users/users.factory';
-import { CartAPI } from './carts';
+
 /**
  * Con esta variable elegimos el tipo de persistencia
  */
@@ -17,14 +18,13 @@ class User {
   }
 
   async getUsers(id?: string): Promise<UserI[]> {
-    if (id) return this.users.get(id);
+    if (id) return await this.users.get(id);
 
-    return this.users.get();
+    return await this.users.get();
   }
 
   async addUser(userData: NewUserI): Promise<UserI> {
     const newUser = await this.users.add(userData);
-    await CartAPI.createCart(newUser._id);
     return newUser;
   }
 
@@ -38,20 +38,18 @@ class User {
     // Borrar carrito tambien
   }
 
-  async query(username?: string, email?: string): Promise<UserI> {
+  async query(email?: string): Promise<UserI> {
     const query = {
       $or: [] as UserQuery[],
     };
 
-    if (username) query.$or.push({ username });
-
     if (email) query.$or.push({ email });
 
-    return this.users.query(query);
+    return await this.users.query(query);
   }
 
-  async ValidatePassword(username: string, password: string) {
-    return this.users.validateUserPassword(username, password);
+  async ValidatePassword(email: string, password: string) {
+    return await this.users.validateUserPassword(email, password);
   }
 }
 

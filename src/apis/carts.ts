@@ -1,7 +1,6 @@
 import { CartFactoryDAO, TipoPersistencia } from '../models/carts/cart.factory';
 import { CartI } from '../models/carts/cart.interface';
 import { UserAPI } from './users';
-import { productsAPI } from './productos';
 /**
  * Con esta variable elegimos el tipo de persistencia
  */
@@ -29,34 +28,27 @@ class Cart {
   }
 
   async addProduct(
-    cartId: string,
+    userId: string,
     productId: string,
-    amount: number
+    cantidad: number
   ): Promise<CartI> {
-    const product = (await productsAPI.getProducts(productId))[0];
-
     const addProduct = {
       _id: productId,
-      nombre: product.nombre,
-      precio: product.precio,
-      amount,
+      cantidad: cantidad,
+      timeStamps: Date.now(),
     };
 
-    const updatedCart = await this.carts.addProduct(cartId, addProduct);
+    const updatedCart = await this.carts.addProduct(userId, addProduct);
     return updatedCart;
   }
 
-  async deleteProudct(cartId: string, productId: string, amount: number) {
-    const product = (await productsAPI.getProducts(productId))[0];
-
+  async deleteProudct(userId: string, productId: string, cantidad: number) {
     const deleteProduct = {
       _id: productId,
-      nombre: product.nombre,
-      precio: product.precio,
-      amount,
+      cantidad,
     };
 
-    const updatedCart = await this.carts.deleteProduct(cartId, deleteProduct);
+    const updatedCart = await this.carts.deleteProduct(userId, deleteProduct);
     return updatedCart;
   }
 }

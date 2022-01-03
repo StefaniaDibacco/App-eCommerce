@@ -13,11 +13,11 @@ const StoreOptions = {
     mongoUrl: `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`,
   }),
 
-  secret: Config.SESSION_SECRET,
+  secret: Config.JWT_SECRET_KEY,
   resave: false,
   saveUninitialized: false,
   cookie: {
-    // maxAge: Config.SESSION_COOKIE_TIMEOUT_MIN * 60 * 1000,
+    // maxAge: Config.TOKEN_KEEP_ALIVE * 60 * 1000,
   },
 };
 

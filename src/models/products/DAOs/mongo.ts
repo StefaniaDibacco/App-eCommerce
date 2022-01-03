@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import mongoose from 'mongoose';
 import {
   newProductI,
@@ -61,19 +62,26 @@ export class ProductosAtlasDAO implements ProductBaseClass {
 
   async add(data: newProductI): Promise<ProductI> {
     if (!data.nombre || !data.precio) throw new Error('invalid data');
-
-    const newProduct = new this.productos(data);
-    await newProduct.save();
+    const product: any = await this.productos.findOne({ nombre: data.nombre });
+    let newProduct;
+    if (product) {
+      newProduct = await this.update(product._id, {
+        stock: product.stock + data.stock,
+      });
+    } else {
+      newProduct = new this.productos(data);
+      await newProduct.save();
+    }
 
     return newProduct;
   }
 
-  async update(id: string, newProductData: newProductI): Promise<ProductI> {
-    return this.productos.findByIdAndUpdate(id, newProductData);
+  async update(id: string, newProductData: ProductQuery): Promise<ProductI> {
+    return await this.productos.findByIdAndUpdate(id, newProductData);
   }
 
   async delete(id: string) {
-    await this.productos.findByIdAndDelete(id);
+    return await this.productos.findByIdAndDelete(id);
   }
 
   async query(options: ProductQuery): Promise<ProductI[]> {
@@ -85,6 +93,6 @@ export class ProductosAtlasDAO implements ProductBaseClass {
 
     if (options.precio) query.precio = options.precio;
 
-    return this.productos.find(query);
+    return await this.productos.find(query);
   }
 }

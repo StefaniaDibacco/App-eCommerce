@@ -8,7 +8,7 @@ const router = Router();
 router.get('/', asyncHandler(productsController.getProducts));
 
 router.get(
-  '/:id',
+  '/:categoria',
   productsController.checkProductExists,
   asyncHandler(productsController.getProducts)
 );
@@ -20,7 +20,7 @@ router.post(
   asyncHandler(productsController.addProducts)
 );
 
-router.put(
+router.patch(
   '/:id',
   checkAdmin,
   productsController.checkProductExists,

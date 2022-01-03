@@ -14,6 +14,7 @@ export interface Imagen {
 }
 
 export interface newProductI {
+  _id?: string;
   nombre: string;
   descripcion: string;
   categoria: string;
@@ -36,12 +37,13 @@ export interface ProductQuery {
   nombre?: string;
   categoria?: string;
   precio?: number;
+  stock?: number;
 }
 
 export interface ProductBaseClass {
   get(id?: string | undefined): Promise<ProductI[]>;
   add(data: newProductI): Promise<ProductI>;
-  update(id: string, newProductData: newProductI): Promise<ProductI>;
-  delete(id: string): Promise<void>;
+  update(id: string, newProductData: ProductQuery): Promise<ProductI>;
+  delete(id: string): Promise<any>;
   query(options: ProductQuery): Promise<ProductI[]>;
 }
