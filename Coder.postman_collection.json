@@ -114,7 +114,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibWVjYUBnbWFpbC5jb20iLCJpYXQiOjE2NDExODExMDYsImV4cCI6MTY0MTE4MTEzMH0.L3wUlIe6r9EaxL3Ty2yxfOTqMz2gHo8RMGvt3gLcPwc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoic3RlZmFuaWEuZGliYWNjb0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MWQyMDYwMzY5Mjk5OGRjNjAzZDBiNDgiLCJpYXQiOjE2NDE0MzExOTcsImV4cCI6MTY0MTUxNzU5N30.KFyo5oIFs-P_grV06EvvItn0zV2rrUsMNCT9oB8WYkc",
 									"type": "string"
 								}
 							]
@@ -216,7 +216,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\",\r\n  \"admin\":\"false\"\r\n}",
+							"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\",\r\n  \"admin\":\"true\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -224,7 +224,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/user",
+							"raw": "http://localhost:8080/api/user/61d1bd2d416d4467d716a47f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -232,7 +232,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"user"
+								"user",
+								"61d1bd2d416d4467d716a47f"
 							]
 						}
 					},
@@ -318,7 +319,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/user/6191d1a54472f60fd1530845",
+							"raw": "http://localhost:8080/api/user/61d1bd2d416d4467d716a47f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -327,7 +328,7 @@
 							"path": [
 								"api",
 								"user",
-								"6191d1a54472f60fd1530845"
+								"61d1bd2d416d4467d716a47f"
 							]
 						}
 					},
@@ -474,7 +475,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"meca@gmail.com\",\r\n    \"password\": \"Coder.159\"\r\n}",
+							"raw": "{\r\n    \"email\": \"stefania.dibacco@gmail.com\",\r\n    \"password\": \"Coder.159\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -703,7 +704,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/products",
+							"raw": "http://localhost:8080/api/products/http",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -711,7 +712,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"products"
+								"products",
+								"http"
 							]
 						}
 					},
@@ -753,7 +755,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Pinceles\",\r\n    \"price\": 1900,\r\n    \"thumbnail\": \"http\",\r\n    \"stock\": 100\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Pinceles\",\r\n    \"descripcion\": 1900,\r\n    \"categoria\": \"libreria\",\r\n    \"precio\": 100\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -761,7 +763,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/products/6139442853aefeac174acdbc",
+							"raw": "http://localhost:8080/api/products/61d1c947550f83c27754c78c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -770,11 +772,76 @@
 							"path": [
 								"api",
 								"products",
-								"6139442853aefeac174acdbc"
+								"61d1c947550f83c27754c78c"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "api/products/id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Pinceles\",\r\n    \"descripcion\": 1900,\r\n    \"categoria\": \"libreria\",\r\n    \"precio\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/61d1c947550f83c27754c78c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"61d1c947550f83c27754c78c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-coXuxcy6nAJUVa/uZ5H3Yv9f8Is\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:54:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"actualizando producto\",\n    \"data\": null\n}"
+						}
+					]
 				},
 				{
 					"name": "api/products/id",
@@ -791,7 +858,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/products/61d1cd98c70440c743d6ce69",
+							"raw": "http://localhost:8080/api/products/61d1c947550f83c27754c78c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -800,7 +867,7 @@
 							"path": [
 								"api",
 								"products",
-								"61d1cd98c70440c743d6ce69"
+								"61d1c947550f83c27754c78c"
 							]
 						}
 					},
@@ -886,7 +953,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user\":{\r\n        \"_id\": \"61d1bc077b6c6d3ec426d763\",\r\n        \"email\": \"meca@gmail.com\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"user\":{\r\n        \"_id\": \"61d20603692998dc603d0b48\",\r\n        \"email\": \"stefania.dibacco@gmail.com\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -981,7 +1048,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productId\": \"61d1c947550f83c27754c78c\",\r\n    \"cantidad\": 5\r\n}",
+							"raw": "{\r\n    \"productId\": \"61d1cb0c8287676d164a7b89\",\r\n    \"cantidad\": 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1140,7 +1207,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productId\": \"61d1c947550f83c27754c78c\",\r\n    \"cantidad\": 4\r\n}",
+							"raw": "{\r\n    \"productId\": \"61d1cb0c8287676d164a7b89\",\r\n    \"cantidad\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1148,7 +1215,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/cart/borrar/61d1bc077b6c6d3ec426d763",
+							"raw": "http://localhost:8080/api/cart/borrar/61d20603692998dc603d0b48",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1158,7 +1225,7 @@
 								"api",
 								"cart",
 								"borrar",
-								"61d1bc077b6c6d3ec426d763"
+								"61d20603692998dc603d0b48"
 							]
 						}
 					},
@@ -1347,7 +1414,7 @@
 								{
 									"key": "foto",
 									"type": "file",
-									"src": "/C:/Users/Stefy/Pictures/mora/20201126_224455.jpg"
+									"src": "/C:/Users/Stefy/Downloads/PROPUESTA DE CATERING Y PIZZA PARTY.pdf"
 								}
 							]
 						},
@@ -1636,12 +1703,12 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibWVjYUBnbWFpbC5jb20iLCJ1c2VySWQiOiI2MWQxYmMwNzdiNmM2ZDNlYzQyNmQ3NjMiLCJpYXQiOjE2NDEzNDc3NDksImV4cCI6MTY0MTQzNDE0OX0.knrMIwq8jhnk1ehDXasu1az1o9vtuw2KDFZuec5Tkng",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoic3RlZmFuaWEuZGliYWNjb0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MWQyMDYwMzY5Mjk5OGRjNjAzZDBiNDgiLCJpYXQiOjE2NDE0MzExOTcsImV4cCI6MTY0MTUxNzU5N30.KFyo5oIFs-P_grV06EvvItn0zV2rrUsMNCT9oB8WYkc",
 									"type": "string"
 								}
 							]
 						},
-						"method": "POST",
+						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "formdata",
@@ -1650,16 +1717,11 @@
 									"key": "productId",
 									"value": "61d1c947550f83c27754c78c",
 									"type": "default"
-								},
-								{
-									"key": "foto",
-									"type": "file",
-									"src": "/C:/Users/Stefy/Pictures/mora/20201126_224455.jpg"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/imagen/upload",
+							"raw": "http://localhost:8080/api/imagen/61d6396eca180b95a8332eba",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1668,7 +1730,7 @@
 							"path": [
 								"api",
 								"imagen",
-								"upload"
+								"61d6396eca180b95a8332eba"
 							]
 						}
 					},

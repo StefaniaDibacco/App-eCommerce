@@ -312,7 +312,9 @@
           }
         },
         "deprecated": false
-      },
+      }
+    },
+    "/user/61d1bd2d416d4467d716a47f": {
       "put": {
         "tags": ["user"],
         "summary": "user",
@@ -331,7 +333,7 @@
                 "email": "stefania.dibacco@gmail.com",
                 "username": "stefy",
                 "password": "Coder.159",
-                "admin": "false"
+                "admin": "true"
               }
             }
           },
@@ -421,9 +423,7 @@
           }
         },
         "deprecated": false
-      }
-    },
-    "/user/6191d1a54472f60fd1530845": {
+      },
       "delete": {
         "tags": ["user"],
         "summary": "user1",
@@ -610,7 +610,7 @@
                 "$ref": "#/components/schemas/apiauthloginrequest"
               },
               "example": {
-                "email": "meca@gmail.com",
+                "email": "stefania.dibacco@gmail.com",
                 "password": "Coder.159"
               }
             }
@@ -846,7 +846,22 @@
         "deprecated": false
       }
     },
-    "/products/6139442853aefeac174acdbc": {
+    "/products/http": {
+      "get": {
+        "tags": ["products"],
+        "summary": "api/products/id",
+        "operationId": "api/products/id",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/61d1c947550f83c27754c78c": {
       "patch": {
         "tags": ["products"],
         "summary": "api/products/id",
@@ -860,10 +875,10 @@
                 "$ref": "#/components/schemas/apiproductsidrequest"
               },
               "example": {
-                "title": "Pinceles",
-                "price": 1900,
-                "thumbnail": "http",
-                "stock": 100
+                "nombre": "Pinceles",
+                "descripcion": 1900,
+                "categoria": "libreria",
+                "precio": 100
               }
             }
           },
@@ -871,14 +886,90 @@
         },
         "responses": {
           "200": {
-            "description": "",
-            "headers": {}
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "43"
+                    },
+                    "example": "43"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"2b-coXuxcy6nAJUVa/uZ5H3Yv9f8Is\""
+                    },
+                    "example": "W/\"2b-coXuxcy6nAJUVa/uZ5H3Yv9f8Is\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:54:36 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:54:36 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/apiproductsid"
+                },
+                "example": {
+                  "msg": "actualizando producto",
+                  "data": null
+                }
+              }
+            }
           }
         },
         "deprecated": false
-      }
-    },
-    "/products/61d1cd98c70440c743d6ce69": {
+      },
       "delete": {
         "tags": ["products"],
         "summary": "api/products/id1",
@@ -1092,8 +1183,8 @@
                 "$ref": "#/components/schemas/apicartagregaridrequest"
               },
               "example": {
-                "productId": "61d1c947550f83c27754c78c",
-                "cantidad": 5
+                "productId": "61d1cb0c8287676d164a7b89",
+                "cantidad": 3
               }
             }
           },
@@ -1285,7 +1376,7 @@
         "deprecated": false
       }
     },
-    "/cart/borrar/61d1bc077b6c6d3ec426d763": {
+    "/cart/borrar/61d20603692998dc603d0b48": {
       "delete": {
         "tags": ["Carts"],
         "summary": "api/cart/delete/id",
@@ -1783,6 +1874,182 @@
         },
         "deprecated": false
       }
+    },
+    "/imagen/61d6396eca180b95a8332eba": {
+      "delete": {
+        "tags": ["Images"],
+        "summary": "delete",
+        "operationId": "delete",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "110"
+                    },
+                    "example": "110"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"6e-A+AEMnWF94jnm9FhgWbC0OLxZsM\""
+                    },
+                    "example": "W/\"6e-A+AEMnWF94jnm9FhgWbC0OLxZsM\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 00:47:28 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 00:47:28 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/success7"
+                },
+                "example": {
+                  "url": "20201126_224455-1641430048071.jpg",
+                  "timestamp": 1641430048071,
+                  "_id": "61d63c20f9fc2a93fb6932ad",
+                  "__v": 0
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "29"
+                    },
+                    "example": "29"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"1d-g8AmRBVVxkE4RBA2M5j/lOFu6ME\""
+                    },
+                    "example": "W/\"1d-g8AmRBVVxkE4RBA2M5j/lOFu6ME\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 00:48:56 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 00:48:56 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/fail7"
+                },
+                "example": {
+                  "err": "No files extension."
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "components": {
@@ -2154,7 +2421,7 @@
           "email": "stefania.dibacco@gmail.com",
           "username": "stefy",
           "password": "Coder.159",
-          "admin": "false"
+          "admin": "true"
         }
       },
       "fail1": {
@@ -2196,7 +2463,7 @@
           }
         },
         "example": {
-          "email": "meca@gmail.com",
+          "email": "stefania.dibacco@gmail.com",
           "password": "Coder.159"
         }
       },
@@ -2333,29 +2600,47 @@
       },
       "apiproductsidrequest": {
         "title": "apiproductsidrequest",
-        "required": ["title", "price", "thumbnail", "stock"],
+        "required": ["nombre", "descripcion", "categoria", "precio"],
         "type": "object",
         "properties": {
-          "title": {
+          "nombre": {
             "type": "string"
           },
-          "price": {
+          "descripcion": {
             "type": "integer",
             "format": "int32"
           },
-          "thumbnail": {
+          "categoria": {
             "type": "string"
           },
-          "stock": {
+          "precio": {
             "type": "integer",
             "format": "int32"
           }
         },
         "example": {
-          "title": "Pinceles",
-          "price": 1900,
-          "thumbnail": "http",
-          "stock": 100
+          "nombre": "Pinceles",
+          "descripcion": 1900,
+          "categoria": "libreria",
+          "precio": 100
+        }
+      },
+      "apiproductsid": {
+        "title": "apiproductsid",
+        "required": ["msg", "data"],
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "example": {
+          "msg": "actualizando producto",
+          "data": null
         }
       },
       "succes": {
@@ -2485,8 +2770,8 @@
           }
         },
         "example": {
-          "productId": "61d1c947550f83c27754c78c",
-          "cantidad": 5
+          "productId": "61d1cb0c8287676d164a7b89",
+          "cantidad": 3
         }
       },
       "success5": {
@@ -2584,8 +2869,8 @@
           }
         },
         "example": {
-          "productId": "61d1c947550f83c27754c78c",
-          "cantidad": 4
+          "productId": "61d1cb0c8287676d164a7b89",
+          "cantidad": 1
         }
       },
       "fail7": {

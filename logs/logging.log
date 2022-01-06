@@ -71,3 +71,8 @@
 {"level":"error","message":"HUBO UN ERROR Cannot read property '0' of undefined","timestamp":"2022-01-06T00:22:20.534Z"}
 {"level":"error","message":"HUBO UN ERROR The \"path\" argument must be of type string. Received undefined","timestamp":"2022-01-06T00:30:49.438Z"}
 {"level":"error","message":"HUBO UN ERROR No files extension.","timestamp":"2022-01-06T00:48:56.701Z"}
+{"level":"error","message":"HUBO UN ERROR Product not found","timestamp":"2022-01-06T01:31:47.903Z"}
+{"level":"error","message":"HUBO UN ERROR Product not found","timestamp":"2022-01-06T01:32:25.517Z"}
+{"level":"error","message":"HUBO UN ERROR Product not found","timestamp":"2022-01-06T01:33:10.878Z"}
+{"level":"error","message":"HUBO UN ERROR Product not found","timestamp":"2022-01-06T01:33:36.770Z"}
+{"level":"error","message":"HUBO UN ERROR Product not found","timestamp":"2022-01-06T01:34:38.476Z"}
