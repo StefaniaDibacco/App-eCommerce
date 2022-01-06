@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Joi from 'joi';
 import { Schema } from 'mongoose';
 
@@ -8,11 +9,15 @@ export const MensajesJoiSchema = Joi.object({
 });
 
 export type ObjectId = Schema.Types.ObjectId | string;
+export enum Tipo {
+  Usuario = 'usuario',
+  Sistema = 'sistema',
+}
 
 export interface MensajeI {
   userId: ObjectId;
-  firstName: string;
-  tipo: 'usuario' | 'sistema';
+  firstName?: string;
+  tipo: Tipo;
   mensaje: string;
 }
 

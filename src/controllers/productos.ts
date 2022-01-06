@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { productsAPI } from '../apis/productos';
 import { ProductQuery } from '../models/products/products.interface';
+import { Logger } from '../services/logger';
 
 class Producto {
   checkAddProducts(req: Request, res: Response, next: NextFunction) {
@@ -84,7 +85,7 @@ class Producto {
 
     if (id) {
       const result = await productsAPI.deleteProduct(id);
-      console.log(result);
+      Logger.info(result);
       if (!result)
         return res.status(404).json({
           data: 'objeto no encontrado',

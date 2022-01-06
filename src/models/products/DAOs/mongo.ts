@@ -60,6 +60,22 @@ export class ProductosAtlasDAO implements ProductBaseClass {
     }
   }
 
+  async getAll(ids: any[]): Promise<ProductI[]> {
+    try {
+      const document = await this.productos.aggregate([
+        {
+          $match: {
+            _id: { $in: ids },
+          },
+        },
+      ]);
+
+      return document;
+    } catch (err) {
+      return [];
+    }
+  }
+
   async add(data: newProductI): Promise<ProductI> {
     if (!data.nombre || !data.precio) throw new Error('invalid data');
     const product: any = await this.productos.findOne({ nombre: data.nombre });

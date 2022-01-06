@@ -59,7 +59,6 @@ export class UsuariosAtlasDAO implements UserBaseClass {
       this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
     else this.srv = Config.MONGO_ATLAS_SRV;
     mongoose.connect(this.srv);
-    console.log(this.srv, local);
     this.users = mongoose.model<UserI>('user', usersSchema);
     this.carritos = mongoose.model<CartI>('cart', CartSchema);
   }

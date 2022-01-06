@@ -58,3 +58,16 @@
 {"level":"error","message":"HUBO UN ERROR id not found","timestamp":"2022-01-02T20:03:16.423Z"}
 {"level":"error","message":"HUBO UN ERROR Product not found","timestamp":"2022-01-02T20:08:57.012Z"}
 {"level":"error","message":"HUBO UN ERROR Product not found","timestamp":"2022-01-02T20:09:43.870Z"}
+{"level":"error","message":"HUBO UN ERROR orders validation failed: items.0.productId: Cast to Number failed for value \"new ObjectId(\"61d1c947550f83c27754c78c\")\" (type ObjectId) at path \"productId\", items.0.precio: Path `precio` is required.","timestamp":"2022-01-05T02:35:44.645Z"}
+{"level":"error","message":"HUBO UN ERROR orders validation failed: items.0.productId: Cast to Number failed for value \"new ObjectId(\"61d1c947550f83c27754c78c\")\" (type ObjectId) at path \"productId\", items.0.precio: Path `precio` is required.","timestamp":"2022-01-05T02:41:23.866Z"}
+{"level":"error","message":"HUBO UN ERROR orders validation failed: items.0.productId: Cast to Number failed for value \"new ObjectId(\"61d1c947550f83c27754c78c\")\" (type ObjectId) at path \"productId\", items.0.precio: Path `precio` is required.","timestamp":"2022-01-05T02:58:27.273Z"}
+{"level":"error","message":"HUBO UN ERROR orders validation failed: items.0.productId: Cast to Number failed for value \"new ObjectId(\"61d1c947550f83c27754c78c\")\" (type ObjectId) at path \"productId\", items.0.precio: Path `precio` is required.","timestamp":"2022-01-05T03:00:28.188Z"}
+{"level":"error","message":"HUBO UN ERROR orders validation failed: items.0.productId: Cast to Number failed for value \"new ObjectId(\"61d1c947550f83c27754c78c\")\" (type ObjectId) at path \"productId\"","timestamp":"2022-01-05T03:05:28.787Z"}
+{"level":"error","message":"HUBO UN ERROR orders validation failed: items.0.productId: Cast to Number failed for value \"new ObjectId(\"61d1c947550f83c27754c78c\")\" (type ObjectId) at path \"productId\"","timestamp":"2022-01-05T03:07:13.679Z"}
+{"level":"error","message":"HUBO UN ERROR orders validation failed: items.0.productId: Cast to Number failed for value \"61d1c947550f83c27754c78c\" (type string) at path \"productId\"","timestamp":"2022-01-05T03:08:01.926Z"}
+{"level":"error","message":"HUBO UN ERROR document must have an _id before saving","timestamp":"2022-01-05T03:09:32.902Z"}
+{"level":"error","message":"HUBO UN ERROR E11000 duplicate key error collection: ecommerce.orders index: userId_1 dup key: { userId: ObjectId('61d1bc077b6c6d3ec426d763') }","timestamp":"2022-01-05T03:16:48.503Z"}
+{"level":"error","message":"HUBO UN ERROR Cannot read property 'replace' of undefined","timestamp":"2022-01-06T00:21:40.260Z"}
+{"level":"error","message":"HUBO UN ERROR Cannot read property '0' of undefined","timestamp":"2022-01-06T00:22:20.534Z"}
+{"level":"error","message":"HUBO UN ERROR The \"path\" argument must be of type string. Received undefined","timestamp":"2022-01-06T00:30:49.438Z"}
+{"level":"error","message":"HUBO UN ERROR No files extension.","timestamp":"2022-01-06T00:48:56.701Z"}

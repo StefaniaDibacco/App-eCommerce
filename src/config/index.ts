@@ -12,7 +12,7 @@ const venv = {
   MONGO_ATLAS_SRV: process.env.MONGO_ATLAS_SRV2 || 'dbName',
   MONGO_LOCAL_DBNAME: process.env.MONGO_LOCAL_DBNAME || 'dbNameLocal',
   JWT_SECRET_KEY: process.env.JWT_SECRET_KEY || 'shhhhhh',
-  TOKEN_KEEP_ALIVE: parseInt(process.env.TOKEN_KEEP_ALIVE || '10'),
+  TOKEN_KEEP_ALIVE: process.env.TOKEN_KEEP_ALIVE || '1000h',
 };
 
 export default venv;

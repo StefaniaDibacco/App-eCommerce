@@ -1,0 +1,2661 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Coder",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/user/singup": {
+      "post": {
+        "tags": ["user"],
+        "summary": "singup",
+        "operationId": "singup",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/singuprequest"
+              },
+              "example": {
+                "firstName": "Sefania",
+                "lastName": "Di Bacco",
+                "age": "32",
+                "email": "stefania.dibacco@gmail.com",
+                "password": "Coder.159",
+                "password2": "Coder.159",
+                "admin": "true",
+                "cellphone": "+5491167275127",
+                "direccion": {
+                  "calle": "Pringles",
+                  "altura": "808",
+                  "codigoPostal": "1878",
+                  "piso": "",
+                  "departamento": ""
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "278"
+                    },
+                    "example": "278"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"116-JGA0FS7ajI0jTjJwfd17WBdkqJo\""
+                    },
+                    "example": "W/\"116-JGA0FS7ajI0jTjJwfd17WBdkqJo\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Sun, 02 Jan 2022 20:07:35 GMT"
+                    },
+                    "example": "Sun, 02 Jan 2022 20:07:35 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/success"
+                },
+                "example": {
+                  "msg": "ADD USER",
+                  "newItem": {
+                    "firstName": "stefania",
+                    "lastName": "di bacco",
+                    "age": 32,
+                    "cellphone": "+5491167275127",
+                    "email": "stefania.dibacco@gmail.com",
+                    "password": "$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy",
+                    "admin": true,
+                    "_id": "61d20603692998dc603d0b48",
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user": {
+      "get": {
+        "tags": ["user"],
+        "summary": "user",
+        "operationId": "user",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "1703"
+                    },
+                    "example": "1703"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"6a7-0KYPL19h99dQOnFVSh4D+/xXlLA\""
+                    },
+                    "example": "W/\"6a7-0KYPL19h99dQOnFVSh4D+/xXlLA\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:22:16 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:22:16 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/success1"
+                },
+                "example": {
+                  "msg": "GET USERS",
+                  "data": [
+                    {
+                      "_id": "61d1bc077b6c6d3ec426d763",
+                      "firstName": "ivan",
+                      "lastName": "leonel",
+                      "age": 32,
+                      "cellphone": "+5491167275127",
+                      "email": "meca@gmail.com",
+                      "password": "$2b$10$0tdKw1THfMhPJyRdg47kVulslDbpeYfLsfbajkJxNOA8h32JjFSSm",
+                      "admin": false,
+                      "__v": 0
+                    },
+                    {
+                      "_id": "61d1bd2d416d4467d716a47f",
+                      "firstName": "ivan",
+                      "lastName": "leonel",
+                      "age": 32,
+                      "cellphone": "+5491167275127",
+                      "email": "me5c8ea@gmail.com",
+                      "password": "$2b$10$bGkQZd5f0TTudHdgyhpDeebJrAUbfLZ22sBxgSGgFEPLbjyhLGMai",
+                      "admin": false,
+                      "__v": 0
+                    },
+                    {
+                      "_id": "61d1bf2a121860a75a44a6a8",
+                      "firstName": "ivan",
+                      "lastName": "leonel",
+                      "age": 32,
+                      "cellphone": "+5491167275127",
+                      "email": "me5c8e22a@gmail.com",
+                      "password": "$2b$10$b5.gjrd7wZw.i7gLdJWdkepqPPh.VzChNUMPHNILKr.f6HF618JPu",
+                      "admin": false,
+                      "__v": 0
+                    },
+                    {
+                      "admin": false,
+                      "_id": "61d1c36484942a2c4d1cc1c7",
+                      "firstName": "ivan",
+                      "lastName": "leonel",
+                      "age": 22,
+                      "cellphone": "+5491167275127",
+                      "email": "me5c8e2255a@gmail.com",
+                      "password": "$2b$10$ihyML6/VgiI3CAO5dAoqgO8Ty7zGKVSQOvm73O0FqvAL6FL0/Q/1u",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "61d1c3bafa55f80f0792b0f7",
+                      "firstName": "ivan",
+                      "lastName": "leonel",
+                      "age": 22,
+                      "cellphone": "+5491167275127",
+                      "email": "me5c8e2255@gmail.com",
+                      "password": "$2b$10$w4Hz2oNsJkcE.4dbod4aruZ322sAJ4KD4fdMdWoCHBa322288sb3.",
+                      "admin": false,
+                      "__v": 0
+                    },
+                    {
+                      "_id": "61d1c3f7fa55f80f0792b0ff",
+                      "firstName": "ivan",
+                      "lastName": "leonel",
+                      "age": 22,
+                      "cellphone": "+5491167275127",
+                      "email": "me5c8e2255e@gmail.com",
+                      "password": "$2b$10$9ibR73jlzk0Bx0SCvmeLSOz.WknadBpD3s3UTSJWT2nLwk.LK3Cs2",
+                      "admin": true,
+                      "__v": 0
+                    },
+                    {
+                      "_id": "61d20603692998dc603d0b48",
+                      "firstName": "stefania",
+                      "lastName": "di bacco",
+                      "age": 32,
+                      "cellphone": "+5491167275127",
+                      "email": "stefania.dibacco@gmail.com",
+                      "password": "$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy",
+                      "admin": true,
+                      "__v": 0
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": ["user"],
+        "summary": "user",
+        "operationId": "Putuser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/userrequest"
+              },
+              "example": {
+                "firstName": "Stefania",
+                "lastName": "Di Bacco",
+                "email": "stefania.dibacco@gmail.com",
+                "username": "stefy",
+                "password": "Coder.159",
+                "admin": "false"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "29"
+                    },
+                    "example": "29"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"1d-smqpp+BwAn8TyUZpqgr3iAE+5n0\""
+                    },
+                    "example": "W/\"1d-smqpp+BwAn8TyUZpqgr3iAE+5n0\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:24:28 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:24:28 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/fail1"
+                },
+                "example": {
+                  "msg": "No estas autorizado"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/6191d1a54472f60fd1530845": {
+      "delete": {
+        "tags": ["user"],
+        "summary": "user1",
+        "operationId": "user1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "21"
+                    },
+                    "example": "21"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"15-/S3J2VlVymIP/X55Spe9ZnkmDas\""
+                    },
+                    "example": "W/\"15-/S3J2VlVymIP/X55Spe9ZnkmDas\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:17:12 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:17:12 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/success2"
+                },
+                "example": {
+                  "msg": "DELETE USER"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "29"
+                    },
+                    "example": "29"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"1d-smqpp+BwAn8TyUZpqgr3iAE+5n0\""
+                    },
+                    "example": "W/\"1d-smqpp+BwAn8TyUZpqgr3iAE+5n0\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:22:33 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:22:33 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/fail1"
+                },
+                "example": {
+                  "msg": "No estas autorizado"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": ["login/singup"],
+        "summary": "/api/auth/login",
+        "operationId": "/api/auth/login",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/apiauthloginrequest"
+              },
+              "example": {
+                "email": "meca@gmail.com",
+                "password": "Coder.159"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "510"
+                    },
+                    "example": "510"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"1fe-/4hYiSLa/T38pUuSdgA0mM2Z4+E\""
+                    },
+                    "example": "W/\"1fe-/4hYiSLa/T38pUuSdgA0mM2Z4+E\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:06:37 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:06:37 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/success3"
+                },
+                "example": {
+                  "msg": "Welcome!",
+                  "user": {
+                    "_id": "61d20603692998dc603d0b48",
+                    "firstName": "stefania",
+                    "lastName": "di bacco",
+                    "age": 32,
+                    "cellphone": "+5491167275127",
+                    "email": "stefania.dibacco@gmail.com",
+                    "password": "$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy",
+                    "admin": true,
+                    "__v": 0
+                  },
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoic3RlZmFuaWEuZGliYWNjb0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MWQyMDYwMzY5Mjk5OGRjNjAzZDBiNDgiLCJpYXQiOjE2NDE0MzExOTcsImV4cCI6MTY0MTUxNzU5N30.KFyo5oIFs-P_grV06EvvItn0zV2rrUsMNCT9oB8WYkc"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:27:59 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:27:59 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              },
+              "Transfer-Encoding": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "chunked"
+                    },
+                    "example": "chunked"
+                  }
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Unauthorized"
+                },
+                "example": "Unauthorized"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "tags": ["login/singup"],
+        "summary": "/api/auth/signup",
+        "operationId": "/api/auth/signup",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": ["products"],
+        "summary": "api/products",
+        "operationId": "api/products",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": ["products"],
+        "summary": "api/products",
+        "operationId": "Postapi/products",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/apiproductsrequest"
+              },
+              "example": {
+                "nombre": "Pinceles asd",
+                "descripcion": 1900,
+                "categoria": "http",
+                "precio": 100,
+                "stock": 5,
+                "fotos": ""
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/6139442853aefeac174acdbc": {
+      "patch": {
+        "tags": ["products"],
+        "summary": "api/products/id",
+        "operationId": "Patchapi/products/id",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/apiproductsidrequest"
+              },
+              "example": {
+                "title": "Pinceles",
+                "price": 1900,
+                "thumbnail": "http",
+                "stock": 100
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/61d1cd98c70440c743d6ce69": {
+      "delete": {
+        "tags": ["products"],
+        "summary": "api/products/id1",
+        "operationId": "api/products/id1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "25"
+                    },
+                    "example": "25"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"19-7YWBAB2IzGLNqTtYZKn8PpOwhlc\""
+                    },
+                    "example": "W/\"19-7YWBAB2IzGLNqTtYZKn8PpOwhlc\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:29:07 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:29:07 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/succes"
+                },
+                "example": {
+                  "data": "objeto borrado"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/cart/listar": {
+      "get": {
+        "tags": ["Carts"],
+        "summary": "api/cart/listar",
+        "operationId": "api/cart/listar",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "261"
+                    },
+                    "example": "261"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"105-WEDVtChbLMGPrxmTIuKahTrYEOQ\""
+                    },
+                    "example": "W/\"105-WEDVtChbLMGPrxmTIuKahTrYEOQ\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:36:29 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:36:29 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/success4"
+                },
+                "example": {
+                  "direccion": {
+                    "calle": "Pringles",
+                    "altura": 808,
+                    "codigoPostal": 1878,
+                    "piso": "",
+                    "departamento": ""
+                  },
+                  "_id": "61d20604692998dc603d0b4a",
+                  "userId": "61d20603692998dc603d0b48",
+                  "productos": [
+                    {
+                      "_id": "61d1cb0c8287676d164a7b89",
+                      "cantidad": 3,
+                      "timeStamps": 1641432952923
+                    }
+                  ],
+                  "__v": 1
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/cart/agregar": {
+      "post": {
+        "tags": ["Carts"],
+        "summary": "api/cart/agregar/id",
+        "operationId": "api/cart/agregar/id",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/apicartagregaridrequest"
+              },
+              "example": {
+                "productId": "61d1c947550f83c27754c78c",
+                "cantidad": 5
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "27"
+                    },
+                    "example": "27"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"1b-P4x59++lZOhNkPyXfssvq8MLiG0\""
+                    },
+                    "example": "W/\"1b-P4x59++lZOhNkPyXfssvq8MLiG0\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:35:03 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:35:03 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/fail1"
+                },
+                "example": {
+                  "msg": "product not found"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "292"
+                    },
+                    "example": "292"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"124-6eZ8x3iJuO5JlFORBwo/+ScqRK8\""
+                    },
+                    "example": "W/\"124-6eZ8x3iJuO5JlFORBwo/+ScqRK8\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:35:52 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:35:52 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/success5"
+                },
+                "example": {
+                  "msg": "Product added",
+                  "cart": {
+                    "direccion": {
+                      "calle": "Pringles",
+                      "altura": 808,
+                      "codigoPostal": 1878,
+                      "piso": "",
+                      "departamento": ""
+                    },
+                    "_id": "61d20604692998dc603d0b4a",
+                    "userId": "61d20603692998dc603d0b48",
+                    "productos": [
+                      {
+                        "_id": "61d1cb0c8287676d164a7b89",
+                        "cantidad": 3,
+                        "timeStamps": 1641432952923
+                      }
+                    ],
+                    "__v": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/cart/borrar/61d1bc077b6c6d3ec426d763": {
+      "delete": {
+        "tags": ["Carts"],
+        "summary": "api/cart/delete/id",
+        "operationId": "api/cart/delete/id",
+        "parameters": [],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "27"
+                    },
+                    "example": "27"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"1b-Lfoar077M/nO/4WPryw2r7OK47Q\""
+                    },
+                    "example": "W/\"1b-Lfoar077M/nO/4WPryw2r7OK47Q\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:31:47 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:31:47 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/fail7"
+                },
+                "example": {
+                  "err": "Product not found"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "294"
+                    },
+                    "example": "294"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"126-Y/oiSs8L8AJUUVuywxDV/AAU8aM\""
+                    },
+                    "example": "W/\"126-Y/oiSs8L8AJUUVuywxDV/AAU8aM\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:37:17 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:37:17 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/success5"
+                },
+                "example": {
+                  "msg": "Product deleted",
+                  "cart": {
+                    "direccion": {
+                      "calle": "Pringles",
+                      "altura": 808,
+                      "codigoPostal": 1878,
+                      "piso": "",
+                      "departamento": ""
+                    },
+                    "_id": "61d20604692998dc603d0b4a",
+                    "userId": "61d20603692998dc603d0b48",
+                    "productos": [
+                      {
+                        "_id": "61d1cb0c8287676d164a7b89",
+                        "cantidad": 2,
+                        "timeStamps": 1641432952923
+                      }
+                    ],
+                    "__v": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/cart/submit": {
+      "post": {
+        "tags": ["Carts"],
+        "summary": "submit",
+        "operationId": "submit",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/imagen/upload": {
+      "post": {
+        "tags": ["Images"],
+        "summary": "Upload",
+        "operationId": "Upload",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": ["productId", "foto"],
+                "type": "object",
+                "properties": {
+                  "productId": {
+                    "type": "string",
+                    "example": "61d1c947550f83c27754c78c"
+                  },
+                  "foto": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "110"
+                    },
+                    "example": "110"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"6e-A+AEMnWF94jnm9FhgWbC0OLxZsM\""
+                    },
+                    "example": "W/\"6e-A+AEMnWF94jnm9FhgWbC0OLxZsM\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 00:47:28 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 00:47:28 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/success7"
+                },
+                "example": {
+                  "url": "20201126_224455-1641430048071.jpg",
+                  "timestamp": 1641430048071,
+                  "_id": "61d63c20f9fc2a93fb6932ad",
+                  "__v": 0
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "29"
+                    },
+                    "example": "29"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"1d-g8AmRBVVxkE4RBA2M5j/lOFu6ME\""
+                    },
+                    "example": "W/\"1d-g8AmRBVVxkE4RBA2M5j/lOFu6ME\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 00:48:56 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 00:48:56 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/fail7"
+                },
+                "example": {
+                  "err": "No files extension."
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/imagen/get": {
+      "get": {
+        "tags": ["Images"],
+        "summary": "get",
+        "operationId": "get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "2"
+                    },
+                    "example": "2"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+                    },
+                    "example": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Thu, 06 Jan 2022 01:09:03 GMT"
+                    },
+                    "example": "Thu, 06 Jan 2022 01:09:03 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "",
+                  "example": []
+                },
+                "example": []
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "singuprequest": {
+        "title": "singuprequest",
+        "required": [
+          "firstName",
+          "lastName",
+          "age",
+          "email",
+          "password",
+          "password2",
+          "admin",
+          "cellphone",
+          "direccion"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "age": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "password2": {
+            "type": "string"
+          },
+          "admin": {
+            "type": "string"
+          },
+          "cellphone": {
+            "type": "string"
+          },
+          "direccion": {
+            "$ref": "#/components/schemas/Direccion"
+          }
+        },
+        "example": {
+          "firstName": "Sefania",
+          "lastName": "Di Bacco",
+          "age": "32",
+          "email": "stefania.dibacco@gmail.com",
+          "password": "Coder.159",
+          "password2": "Coder.159",
+          "admin": "true",
+          "cellphone": "+5491167275127",
+          "direccion": {
+            "calle": "Pringles",
+            "altura": "808",
+            "codigoPostal": "1878",
+            "piso": "",
+            "departamento": ""
+          }
+        }
+      },
+      "Direccion": {
+        "title": "Direccion",
+        "required": ["calle", "altura", "codigoPostal", "piso", "departamento"],
+        "type": "object",
+        "properties": {
+          "calle": {
+            "type": "string"
+          },
+          "altura": {
+            "type": "string"
+          },
+          "codigoPostal": {
+            "type": "string"
+          },
+          "piso": {
+            "type": "string"
+          },
+          "departamento": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "calle": "Pringles",
+          "altura": "808",
+          "codigoPostal": "1878",
+          "piso": "",
+          "departamento": ""
+        }
+      },
+      "success": {
+        "title": "success",
+        "required": ["msg", "newItem"],
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          },
+          "newItem": {
+            "$ref": "#/components/schemas/NewItem"
+          }
+        },
+        "example": {
+          "msg": "ADD USER",
+          "newItem": {
+            "firstName": "stefania",
+            "lastName": "di bacco",
+            "age": 32,
+            "cellphone": "+5491167275127",
+            "email": "stefania.dibacco@gmail.com",
+            "password": "$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy",
+            "admin": true,
+            "_id": "61d20603692998dc603d0b48",
+            "__v": 0
+          }
+        }
+      },
+      "NewItem": {
+        "title": "NewItem",
+        "required": [
+          "firstName",
+          "lastName",
+          "age",
+          "cellphone",
+          "email",
+          "password",
+          "admin",
+          "_id",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cellphone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "admin": {
+            "type": "boolean"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "firstName": "stefania",
+          "lastName": "di bacco",
+          "age": 32,
+          "cellphone": "+5491167275127",
+          "email": "stefania.dibacco@gmail.com",
+          "password": "$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy",
+          "admin": true,
+          "_id": "61d20603692998dc603d0b48",
+          "__v": 0
+        }
+      },
+      "success1": {
+        "title": "success1",
+        "required": ["msg", "data"],
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Datum"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "msg": "GET USERS",
+          "data": [
+            {
+              "_id": "61d1bc077b6c6d3ec426d763",
+              "firstName": "ivan",
+              "lastName": "leonel",
+              "age": 32,
+              "cellphone": "+5491167275127",
+              "email": "meca@gmail.com",
+              "password": "$2b$10$0tdKw1THfMhPJyRdg47kVulslDbpeYfLsfbajkJxNOA8h32JjFSSm",
+              "admin": false,
+              "__v": 0
+            },
+            {
+              "_id": "61d1bd2d416d4467d716a47f",
+              "firstName": "ivan",
+              "lastName": "leonel",
+              "age": 32,
+              "cellphone": "+5491167275127",
+              "email": "me5c8ea@gmail.com",
+              "password": "$2b$10$bGkQZd5f0TTudHdgyhpDeebJrAUbfLZ22sBxgSGgFEPLbjyhLGMai",
+              "admin": false,
+              "__v": 0
+            },
+            {
+              "_id": "61d1bf2a121860a75a44a6a8",
+              "firstName": "ivan",
+              "lastName": "leonel",
+              "age": 32,
+              "cellphone": "+5491167275127",
+              "email": "me5c8e22a@gmail.com",
+              "password": "$2b$10$b5.gjrd7wZw.i7gLdJWdkepqPPh.VzChNUMPHNILKr.f6HF618JPu",
+              "admin": false,
+              "__v": 0
+            },
+            {
+              "admin": false,
+              "_id": "61d1c36484942a2c4d1cc1c7",
+              "firstName": "ivan",
+              "lastName": "leonel",
+              "age": 22,
+              "cellphone": "+5491167275127",
+              "email": "me5c8e2255a@gmail.com",
+              "password": "$2b$10$ihyML6/VgiI3CAO5dAoqgO8Ty7zGKVSQOvm73O0FqvAL6FL0/Q/1u",
+              "__v": 0
+            },
+            {
+              "_id": "61d1c3bafa55f80f0792b0f7",
+              "firstName": "ivan",
+              "lastName": "leonel",
+              "age": 22,
+              "cellphone": "+5491167275127",
+              "email": "me5c8e2255@gmail.com",
+              "password": "$2b$10$w4Hz2oNsJkcE.4dbod4aruZ322sAJ4KD4fdMdWoCHBa322288sb3.",
+              "admin": false,
+              "__v": 0
+            },
+            {
+              "_id": "61d1c3f7fa55f80f0792b0ff",
+              "firstName": "ivan",
+              "lastName": "leonel",
+              "age": 22,
+              "cellphone": "+5491167275127",
+              "email": "me5c8e2255e@gmail.com",
+              "password": "$2b$10$9ibR73jlzk0Bx0SCvmeLSOz.WknadBpD3s3UTSJWT2nLwk.LK3Cs2",
+              "admin": true,
+              "__v": 0
+            },
+            {
+              "_id": "61d20603692998dc603d0b48",
+              "firstName": "stefania",
+              "lastName": "di bacco",
+              "age": 32,
+              "cellphone": "+5491167275127",
+              "email": "stefania.dibacco@gmail.com",
+              "password": "$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy",
+              "admin": true,
+              "__v": 0
+            }
+          ]
+        }
+      },
+      "Datum": {
+        "title": "Datum",
+        "required": [
+          "_id",
+          "firstName",
+          "lastName",
+          "age",
+          "cellphone",
+          "email",
+          "password",
+          "admin",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cellphone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "admin": {
+            "type": "boolean"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "_id": "61d1bc077b6c6d3ec426d763",
+          "firstName": "ivan",
+          "lastName": "leonel",
+          "age": 32,
+          "cellphone": "+5491167275127",
+          "email": "meca@gmail.com",
+          "password": "$2b$10$0tdKw1THfMhPJyRdg47kVulslDbpeYfLsfbajkJxNOA8h32JjFSSm",
+          "admin": false,
+          "__v": 0
+        }
+      },
+      "userrequest": {
+        "title": "userrequest",
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "username",
+          "password",
+          "admin"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "admin": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "firstName": "Stefania",
+          "lastName": "Di Bacco",
+          "email": "stefania.dibacco@gmail.com",
+          "username": "stefy",
+          "password": "Coder.159",
+          "admin": "false"
+        }
+      },
+      "fail1": {
+        "title": "fail1",
+        "required": ["msg"],
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "msg": "No estas autorizado"
+        }
+      },
+      "success2": {
+        "title": "success2",
+        "required": ["msg"],
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "msg": "DELETE USER"
+        }
+      },
+      "apiauthloginrequest": {
+        "title": "apiauthloginrequest",
+        "required": ["email", "password"],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "meca@gmail.com",
+          "password": "Coder.159"
+        }
+      },
+      "success3": {
+        "title": "success3",
+        "required": ["msg", "user", "token"],
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "msg": "Welcome!",
+          "user": {
+            "_id": "61d20603692998dc603d0b48",
+            "firstName": "stefania",
+            "lastName": "di bacco",
+            "age": 32,
+            "cellphone": "+5491167275127",
+            "email": "stefania.dibacco@gmail.com",
+            "password": "$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy",
+            "admin": true,
+            "__v": 0
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoic3RlZmFuaWEuZGliYWNjb0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MWQyMDYwMzY5Mjk5OGRjNjAzZDBiNDgiLCJpYXQiOjE2NDE0MzExOTcsImV4cCI6MTY0MTUxNzU5N30.KFyo5oIFs-P_grV06EvvItn0zV2rrUsMNCT9oB8WYkc"
+        }
+      },
+      "User": {
+        "title": "User",
+        "required": [
+          "_id",
+          "firstName",
+          "lastName",
+          "age",
+          "cellphone",
+          "email",
+          "password",
+          "admin",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cellphone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "admin": {
+            "type": "boolean"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "_id": "61d20603692998dc603d0b48",
+          "firstName": "stefania",
+          "lastName": "di bacco",
+          "age": 32,
+          "cellphone": "+5491167275127",
+          "email": "stefania.dibacco@gmail.com",
+          "password": "$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy",
+          "admin": true,
+          "__v": 0
+        }
+      },
+      "apiproductsrequest": {
+        "title": "apiproductsrequest",
+        "required": [
+          "nombre",
+          "descripcion",
+          "categoria",
+          "precio",
+          "stock",
+          "fotos"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoria": {
+            "type": "string"
+          },
+          "precio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fotos": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "nombre": "Pinceles asd",
+          "descripcion": 1900,
+          "categoria": "http",
+          "precio": 100,
+          "stock": 5,
+          "fotos": ""
+        }
+      },
+      "apiproductsidrequest": {
+        "title": "apiproductsidrequest",
+        "required": ["title", "price", "thumbnail", "stock"],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "thumbnail": {
+            "type": "string"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "title": "Pinceles",
+          "price": 1900,
+          "thumbnail": "http",
+          "stock": 100
+        }
+      },
+      "succes": {
+        "title": "succes",
+        "required": ["data"],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "data": "objeto borrado"
+        }
+      },
+      "success4": {
+        "title": "success4",
+        "required": ["direccion", "_id", "userId", "productos", "__v"],
+        "type": "object",
+        "properties": {
+          "direccion": {
+            "$ref": "#/components/schemas/Direccion1"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "productos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Producto"
+            },
+            "description": ""
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "direccion": {
+            "calle": "Pringles",
+            "altura": 808,
+            "codigoPostal": 1878,
+            "piso": "",
+            "departamento": ""
+          },
+          "_id": "61d20604692998dc603d0b4a",
+          "userId": "61d20603692998dc603d0b48",
+          "productos": [
+            {
+              "_id": "61d1cb0c8287676d164a7b89",
+              "cantidad": 3,
+              "timeStamps": 1641432952923
+            }
+          ],
+          "__v": 1
+        }
+      },
+      "Direccion1": {
+        "title": "Direccion1",
+        "required": ["calle", "altura", "codigoPostal", "piso", "departamento"],
+        "type": "object",
+        "properties": {
+          "calle": {
+            "type": "string"
+          },
+          "altura": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoPostal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "piso": {
+            "type": "string"
+          },
+          "departamento": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "calle": "Pringles",
+          "altura": 808,
+          "codigoPostal": 1878,
+          "piso": "",
+          "departamento": ""
+        }
+      },
+      "Producto": {
+        "title": "Producto",
+        "required": ["_id", "cantidad", "timeStamps"],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeStamps": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "example": {
+          "_id": "61d1cb0c8287676d164a7b89",
+          "cantidad": 3,
+          "timeStamps": 1641432952923
+        }
+      },
+      "apicartagregaridrequest": {
+        "title": "apicartagregaridrequest",
+        "required": ["productId", "cantidad"],
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "productId": "61d1c947550f83c27754c78c",
+          "cantidad": 5
+        }
+      },
+      "success5": {
+        "title": "success5",
+        "required": ["msg", "cart"],
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string"
+          },
+          "cart": {
+            "$ref": "#/components/schemas/Cart"
+          }
+        },
+        "example": {
+          "msg": "Product added",
+          "cart": {
+            "direccion": {
+              "calle": "Pringles",
+              "altura": 808,
+              "codigoPostal": 1878,
+              "piso": "",
+              "departamento": ""
+            },
+            "_id": "61d20604692998dc603d0b4a",
+            "userId": "61d20603692998dc603d0b48",
+            "productos": [
+              {
+                "_id": "61d1cb0c8287676d164a7b89",
+                "cantidad": 3,
+                "timeStamps": 1641432952923
+              }
+            ],
+            "__v": 1
+          }
+        }
+      },
+      "Cart": {
+        "title": "Cart",
+        "required": ["direccion", "_id", "userId", "productos", "__v"],
+        "type": "object",
+        "properties": {
+          "direccion": {
+            "$ref": "#/components/schemas/Direccion1"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "productos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Producto"
+            },
+            "description": ""
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "direccion": {
+            "calle": "Pringles",
+            "altura": 808,
+            "codigoPostal": 1878,
+            "piso": "",
+            "departamento": ""
+          },
+          "_id": "61d20604692998dc603d0b4a",
+          "userId": "61d20603692998dc603d0b48",
+          "productos": [
+            {
+              "_id": "61d1cb0c8287676d164a7b89",
+              "cantidad": 3,
+              "timeStamps": 1641432952923
+            }
+          ],
+          "__v": 1
+        }
+      },
+      "apicartdeleteidrequest": {
+        "title": "apicartdeleteidrequest",
+        "required": ["productId", "cantidad"],
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "productId": "61d1c947550f83c27754c78c",
+          "cantidad": 4
+        }
+      },
+      "fail7": {
+        "title": "fail7",
+        "required": ["err"],
+        "type": "object",
+        "properties": {
+          "err": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "err": "Product not found"
+        }
+      },
+      "success7": {
+        "title": "success7",
+        "required": ["url", "timestamp", "_id", "__v"],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "url": "20201126_224455-1641430048071.jpg",
+          "timestamp": 1641430048071,
+          "_id": "61d63c20f9fc2a93fb6932ad",
+          "__v": 0
+        }
+      }
+    },
+    "securitySchemes": {
+      "httpBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "httpBearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "user"
+    },
+    {
+      "name": "login/singup"
+    },
+    {
+      "name": "products"
+    },
+    {
+      "name": "Carts"
+    },
+    {
+      "name": "Images"
+    }
+  ]
+}

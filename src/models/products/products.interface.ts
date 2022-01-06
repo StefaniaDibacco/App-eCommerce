@@ -9,10 +9,6 @@ export const productJoiSchema = Joi.object({
   fotos: Joi.array().items(Joi.string()),
 });
 
-export interface Imagen {
-  idImagen: string;
-}
-
 export interface newProductI {
   _id?: string;
   nombre: string;
@@ -20,7 +16,7 @@ export interface newProductI {
   categoria: string;
   precio: number;
   stock: number;
-  fotos?: Imagen[];
+  fotos?: string[];
 }
 
 export interface ProductI {
@@ -30,7 +26,7 @@ export interface ProductI {
   categoria: string;
   precio: number;
   stock: number;
-  fotos: Imagen[];
+  fotos: string[];
 }
 
 export interface ProductQuery {
@@ -38,6 +34,7 @@ export interface ProductQuery {
   categoria?: string;
   precio?: number;
   stock?: number;
+  fotos?: string[];
 }
 
 export interface ProductBaseClass {

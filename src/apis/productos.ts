@@ -26,12 +26,16 @@ class prodAPI {
     return this.productos.get();
   }
 
+  async getAllProducts(ids: any[]): Promise<ProductI[]> {
+    return this.productos.getAll(ids);
+  }
+
   async addProduct(productData: newProductI): Promise<ProductI> {
     const newProduct = await this.productos.add(productData);
     return newProduct;
   }
 
-  async updateProduct(id: string, productData: newProductI) {
+  async updateProduct(id: string, productData: ProductQuery) {
     const updatedProduct = await this.productos.update(id, productData);
     return updatedProduct;
   }

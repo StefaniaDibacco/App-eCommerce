@@ -1,22 +1,18 @@
 import mongoose, { Schema } from 'mongoose';
+import { productsAPI } from '../../../apis/productos';
 import Config from '../../../config';
 import { CartI } from '../../carts/cart.interface';
 import { OrdenI, OrdenBaseClass, NewOrden, ItemsI } from '../order.interface';
 
 const OrderSchema = new mongoose.Schema<OrdenI>({
-  _id: {
-    type: Schema.Types.ObjectId,
-    require: true,
-  },
   userId: {
     type: Schema.Types.ObjectId,
     required: true,
-    unique: true,
   },
   items: [
     {
       productId: {
-        type: Number,
+        type: String,
         require: true,
       },
       cantidad: {
@@ -61,15 +57,17 @@ export class OrderAtlasDAO implements OrdenBaseClass {
     /* buscar los productos desde su id */
     const productIds = productos.map((prod) => prod._id);
     /* obtengo los productos */
-    const productosBuscados: any[] = await this.Order.find({
-      _id: { $in: productIds },
-    });
+    const productosBuscados: any[] = await productsAPI.getAllProducts(
+      productIds
+    );
 
     for (let i = 0; i < productos.length; i++) {
       const producto = productos[i];
-      const productoBuscado = productosBuscados.find(
-        (pb) => pb._id === producto._id
-      );
+      const productoBuscado = productosBuscados.find((pb) => {
+        const idPb = pb._id.toString();
+        const idProd = producto._id.toString();
+        return idPb === idProd;
+      });
       if (productoBuscado) productos[i].precio = productoBuscado.precio;
     }
     /** obtengo el total de la orden */
@@ -78,10 +76,12 @@ export class OrderAtlasDAO implements OrdenBaseClass {
       .reduce((a, b) => a + b, 0);
 
     const items: ItemsI[] = productos.map((prod) => {
+      // @ts-ignore: Object is possibly 'null'.
+      const precioUnitario = prod.precio | 1;
       return {
-        productId: prod._id,
+        productId: prod._id.toString(),
         cantidad: prod.cantidad,
-        precio: prod.precio,
+        precio: precioUnitario * prod.cantidad,
       };
     });
 
@@ -97,7 +97,7 @@ export class OrderAtlasDAO implements OrdenBaseClass {
     return await newOrden.save();
   }
 
-  async getOrder(userId: string, orderId: string) {
+  async getOrder(userId: string, orderId: string | undefined) {
     let query = {};
     if (!orderId) {
       query = { userId };

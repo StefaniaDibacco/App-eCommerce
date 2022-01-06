@@ -1,0 +1,52 @@
+<html>
+
+  <head>
+    <meta charset='UTF-8' />
+    <title>My Aplicación con Sockets</title>
+    <script src='/socket.io/socket.io.js'></script>
+    <script src='socket.js'></script>
+  </head>
+
+  <body>
+
+    <main class='container'>
+      <h1>Centro de Mensajes</h1>
+      <h2 class='mt-4'></h2>
+      <div id='formMensajes'>
+        <div class='form-group'>
+          <label for='token'>token</label>
+          <input
+            class='form-control'
+            type='text'
+            name='token'
+            id='token'
+            required
+          />
+        </div> 
+        <div class='form-group'>
+          <label for='mensaje'>Mensaje</label>
+          <input
+            class='form-control'
+            type='text'
+            name='mensaje'
+            id='mensaje'
+            required
+          />
+        </div>
+        <input type='button' value='Enviar'class='btn btn-success' onclick='addMessage()' />
+        </div>
+      </div>
+      <div class='mt-4 chatbox'  id='mensajesContainer'>
+
+      </div>
+    </main>
+  </body>
+
+  <script
+    src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js'
+    integrity='sha512-oFOCo2/3DtjrJG4N27BjSLQWoiBv171sK6a+JiWjp/7agxC2nCUP358AqzxkBUb5jX8g6CYLPdSKQTbC0weCwA=='
+    crossorigin='anonymous'
+  ></script>
+  </body>
+
+</html>

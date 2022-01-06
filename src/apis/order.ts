@@ -20,7 +20,7 @@ class Orden {
     return await this.Order.createOrder(carrito);
   }
 
-  async get(userId: string, orderId: string) {
+  async get(userId: string, orderId?: string) {
     return await this.Order.getOrder(userId, orderId);
   }
 

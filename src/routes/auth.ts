@@ -5,7 +5,8 @@ import { getAuthToken } from '../middleware/auth';
 const router = Router();
 
 router.post('/login', passport.authenticate('login'), function (req, res) {
-  const token = getAuthToken(req.body.email);
+  const user: any = req.user;
+  const token = getAuthToken(req.body.email, user._id);
   return res.json({ msg: 'Welcome!', user: req.user, token });
 });
 

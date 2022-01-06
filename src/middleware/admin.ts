@@ -107,7 +107,7 @@ export const isLoggedIn = (req: Request, res: Response, done: NextFunction) => {
 };
 
 export const isAdmin = (req: Request, res: Response, done: NextFunction) => {
-  console.log(req.user);
+  Logger.info(req.user);
   if (!req.user) return res.status(401).json({ msg: 'Unathorized' });
 
   done();

@@ -20,7 +20,7 @@ export const ordenJoiSchema = Joi.object({
 export type ObjectId = Schema.Types.ObjectId | string;
 
 export interface ItemsI {
-  productId: string;
+  productId: ObjectId;
   cantidad: number;
   precio?: number;
 }

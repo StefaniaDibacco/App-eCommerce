@@ -1,16 +1,29 @@
 body {
-    background-color: #eceaea
+  background-color: #eceaea;
 }
 
 .text {
-    color: #008000;
-    font-style: italic;
-    word-wrap: break-word;
-  }
-  .email {
-    color: #0000FF;
-    font-weight: bold;
-  }
-  .date {
-    color: #800000;
-  }
+  color: #008000;
+  font-style: italic;
+  word-wrap: break-word;
+}
+.email {
+  color: #0000ff;
+  font-weight: bold;
+}
+.date {
+  color: #800000;
+}
+.mensaje {
+  background: rgb(255, 255, 255);
+  border: 1px solid #301818;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.chatbox {
+  background: rgb(89, 88, 88);
+  border: 1px solid #000000;
+  border-radius: 7px;
+  padding: 10px;
+}

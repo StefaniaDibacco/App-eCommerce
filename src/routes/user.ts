@@ -2,6 +2,7 @@ import asyncHandler from 'express-async-handler';
 import { Router } from 'express';
 import { UserController } from '../controllers/users';
 import { checkAuthToken } from '../middleware/auth';
+import { checkAdmin } from '../middleware/admin';
 
 const router = Router();
 
@@ -13,8 +14,8 @@ router.post(
   asyncHandler(UserController.addUser)
 );
 
-router.put('/:id', asyncHandler(UserController.updateUser));
+router.put('/:id', checkAdmin, asyncHandler(UserController.updateUser));
 
-router.delete('/:id', asyncHandler(UserController.deleteUser));
+router.delete('/:id', checkAdmin, asyncHandler(UserController.deleteUser));
 
 export default router;

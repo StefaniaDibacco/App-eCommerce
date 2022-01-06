@@ -6,65 +6,45 @@
 	},
 	"item": [
 		{
-			"name": "Tercer entrega",
+			"name": "user",
 			"item": [
 				{
-					"name": "user",
-					"item": [
+					"name": "singup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Sefania\",\r\n    \"lastName\": \"Di Bacco\",\r\n    \"age\": \"32\",\r\n    \"email\": \"stefania.dibacco@gmail.com\",\r\n    \"password\": \"Coder.159\",\r\n    \"password2\": \"Coder.159\",\r\n    \"admin\": \"true\",\r\n    \"cellphone\": \"+5491167275127\",\r\n    \"direccion\": {\r\n        \"calle\": \"Pringles\",\r\n        \"altura\":\"808\",\r\n        \"codigoPostal\": \"1878\",\r\n        \"piso\": \"\",\r\n        \"departamento\": \"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/singup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"singup"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "/api/user",
-							"request": {
+							"name": "success",
+							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "firstName",
-											"value": "Ivan",
-											"type": "text"
-										},
-										{
-											"key": "lastName",
-											"value": "leonel",
-											"type": "text"
-										},
-										{
-											"key": "age",
-											"value": "25",
-											"type": "text"
-										},
-										{
-											"key": "username",
-											"value": "meca4",
-											"type": "text"
-										},
-										{
-											"key": "dir",
-											"value": "calle Falsa 123",
-											"type": "text"
-										},
-										{
-											"key": "cellphone",
-											"value": "+5491130881719",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "mecalux4@gmail.com",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "Coder.159",
-											"type": "text"
-										},
-										{
-											"key": "photo",
-											"value": "https://www.facebook.com/photo/?fbid=3123634634341030&set=a.145757185462138",
-											"type": "text"
-										}
-									],
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"stefania\",\r\n    \"lastName\": \"di bacco\",\r\n    \"age\": \"32\",\r\n    \"email\": \"stefania.dibacco@gmail.com\",\r\n    \"password\": \"Coder.159\",\r\n    \"password2\": \"Coder.159\",\r\n    \"cellphone\": \"+5491167275127\",\r\n    \"admin\": \"true\",\r\n    \"direccion\": {\r\n        \"calle\": \"Pringles\",\r\n        \"altura\": \"808\",\r\n        \"codigoPostal\": \"1878\",\r\n        \"piso\": \"\",\r\n        \"departamento\": \"\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -72,7 +52,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/user",
+									"raw": "http://localhost:8080/api/user/singup",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -80,18 +60,93 @@
 									"port": "8080",
 									"path": [
 										"api",
-										"user"
+										"user",
+										"singup"
 									]
 								}
 							},
-							"response": []
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"116-JGA0FS7ajI0jTjJwfd17WBdkqJo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jan 2022 20:07:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"ADD USER\",\n    \"newItem\": {\n        \"firstName\": \"stefania\",\n        \"lastName\": \"di bacco\",\n        \"age\": 32,\n        \"cellphone\": \"+5491167275127\",\n        \"email\": \"stefania.dibacco@gmail.com\",\n        \"password\": \"$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy\",\n        \"admin\": true,\n        \"_id\": \"61d20603692998dc603d0b48\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibWVjYUBnbWFpbC5jb20iLCJpYXQiOjE2NDExODExMDYsImV4cCI6MTY0MTE4MTEzMH0.L3wUlIe6r9EaxL3Ty2yxfOTqMz2gHo8RMGvt3gLcPwc",
+									"type": "string"
+								}
+							]
 						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "/api/user",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
+							"name": "success",
+							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"body": {
@@ -116,16 +171,80 @@
 									]
 								}
 							},
-							"response": []
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1703"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6a7-0KYPL19h99dQOnFVSh4D+/xXlLA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:22:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"GET USERS\",\n    \"data\": [\n        {\n            \"_id\": \"61d1bc077b6c6d3ec426d763\",\n            \"firstName\": \"ivan\",\n            \"lastName\": \"leonel\",\n            \"age\": 32,\n            \"cellphone\": \"+5491167275127\",\n            \"email\": \"meca@gmail.com\",\n            \"password\": \"$2b$10$0tdKw1THfMhPJyRdg47kVulslDbpeYfLsfbajkJxNOA8h32JjFSSm\",\n            \"admin\": false,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61d1bd2d416d4467d716a47f\",\n            \"firstName\": \"ivan\",\n            \"lastName\": \"leonel\",\n            \"age\": 32,\n            \"cellphone\": \"+5491167275127\",\n            \"email\": \"me5c8ea@gmail.com\",\n            \"password\": \"$2b$10$bGkQZd5f0TTudHdgyhpDeebJrAUbfLZ22sBxgSGgFEPLbjyhLGMai\",\n            \"admin\": false,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61d1bf2a121860a75a44a6a8\",\n            \"firstName\": \"ivan\",\n            \"lastName\": \"leonel\",\n            \"age\": 32,\n            \"cellphone\": \"+5491167275127\",\n            \"email\": \"me5c8e22a@gmail.com\",\n            \"password\": \"$2b$10$b5.gjrd7wZw.i7gLdJWdkepqPPh.VzChNUMPHNILKr.f6HF618JPu\",\n            \"admin\": false,\n            \"__v\": 0\n        },\n        {\n            \"admin\": false,\n            \"_id\": \"61d1c36484942a2c4d1cc1c7\",\n            \"firstName\": \"ivan\",\n            \"lastName\": \"leonel\",\n            \"age\": 22,\n            \"cellphone\": \"+5491167275127\",\n            \"email\": \"me5c8e2255a@gmail.com\",\n            \"password\": \"$2b$10$ihyML6/VgiI3CAO5dAoqgO8Ty7zGKVSQOvm73O0FqvAL6FL0/Q/1u\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61d1c3bafa55f80f0792b0f7\",\n            \"firstName\": \"ivan\",\n            \"lastName\": \"leonel\",\n            \"age\": 22,\n            \"cellphone\": \"+5491167275127\",\n            \"email\": \"me5c8e2255@gmail.com\",\n            \"password\": \"$2b$10$w4Hz2oNsJkcE.4dbod4aruZ322sAJ4KD4fdMdWoCHBa322288sb3.\",\n            \"admin\": false,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61d1c3f7fa55f80f0792b0ff\",\n            \"firstName\": \"ivan\",\n            \"lastName\": \"leonel\",\n            \"age\": 22,\n            \"cellphone\": \"+5491167275127\",\n            \"email\": \"me5c8e2255e@gmail.com\",\n            \"password\": \"$2b$10$9ibR73jlzk0Bx0SCvmeLSOz.WknadBpD3s3UTSJWT2nLwk.LK3Cs2\",\n            \"admin\": true,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"61d20603692998dc603d0b48\",\n            \"firstName\": \"stefania\",\n            \"lastName\": \"di bacco\",\n            \"age\": 32,\n            \"cellphone\": \"+5491167275127\",\n            \"email\": \"stefania.dibacco@gmail.com\",\n            \"password\": \"$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy\",\n            \"admin\": true,\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\",\r\n  \"admin\":\"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
+						"url": {
+							"raw": "http://localhost:8080/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "/api/user",
-							"request": {
+							"name": "fail",
+							"originalRequest": {
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\"\r\n}",
+									"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\",\r\n  \"admin\":\"false\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -133,36 +252,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/user",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"user"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "/api/user",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"age\":31,\r\n  \"username\": \"stefy\",\r\n  \"dir\": \"calle Falsa 123\",\r\n  \"cellphone\":\"+5491167275127\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"password\": \"Coder.159\",\r\n  \"photo\":\"https://www.facebook.com/photo/?fbid=10225627934101461&set=a.1547542284788\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/user/618d266867b662d892c4e85e",
+									"raw": "http://localhost:8080/api/user/61d1bd2d416d4467d716a47f",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -171,25 +261,249 @@
 									"path": [
 										"api",
 										"user",
-										"618d266867b662d892c4e85e"
+										"61d1bd2d416d4467d716a47f"
 									]
 								}
 							},
-							"response": []
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-smqpp+BwAn8TyUZpqgr3iAE+5n0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:24:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"No estas autorizado\"\n}"
 						}
 					]
 				},
 				{
-					"name": "login/singup",
-					"item": [
+					"name": "user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/6191d1a54472f60fd1530845",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"6191d1a54472f60fd1530845"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "/api/auth/login",
-							"request": {
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/user/61d1bcca7b6c6d3ec426d76d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"user",
+										"61d1bcca7b6c6d3ec426d76d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "21"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15-/S3J2VlVymIP/X55Spe9ZnkmDas\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:17:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"DELETE USER\"\n}"
+						},
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/user/61d1bd2d416d4467d716a47f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"user",
+										"61d1bd2d416d4467d716a47f"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-smqpp+BwAn8TyUZpqgr3iAE+5n0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:22:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"No estas autorizado\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "login/singup",
+			"item": [
+				{
+					"name": "/api/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"meca@gmail.com\",\r\n    \"password\": \"Coder.159\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\"\r\n}",
+									"raw": "{\r\n    \"email\": \"stefania.dibacco@gmail.com\",\r\n    \"password\": \"Coder.159\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -210,16 +524,50 @@
 									]
 								}
 							},
-							"response": []
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "510"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1fe-/4hYiSLa/T38pUuSdgA0mM2Z4+E\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:06:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Welcome!\",\n    \"user\": {\n        \"_id\": \"61d20603692998dc603d0b48\",\n        \"firstName\": \"stefania\",\n        \"lastName\": \"di bacco\",\n        \"age\": 32,\n        \"cellphone\": \"+5491167275127\",\n        \"email\": \"stefania.dibacco@gmail.com\",\n        \"password\": \"$2b$10$lvKJVDm5CynsFAMuJLVRq.mDUpq2kZe/JU78bG69qxZJeNJgJfqRy\",\n        \"admin\": true,\n        \"__v\": 0\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoic3RlZmFuaWEuZGliYWNjb0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MWQyMDYwMzY5Mjk5OGRjNjAzZDBiNDgiLCJpYXQiOjE2NDE0MzExOTcsImV4cCI6MTY0MTUxNzU5N30.KFyo5oIFs-P_grV06EvvItn0zV2rrUsMNCT9oB8WYkc\"\n}"
 						},
 						{
-							"name": "/api/auth/signup",
-							"request": {
+							"name": "fail",
+							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "",
+									"raw": "{\r\n    \"email\": \"mecannsnfn@gmail.com\",\r\n    \"password\": \"Coder.159\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -227,7 +575,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/auth/signup",
+									"raw": "http://localhost:8080/api/auth/login",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -236,24 +584,231 @@
 									"path": [
 										"api",
 										"auth",
-										"signup"
+										"login"
 									]
 								}
 							},
-							"response": []
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:27:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
 						}
 					]
 				},
 				{
-					"name": "products",
-					"item": [
+					"name": "/api/auth/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "api/products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Pinceles asd\",\r\n    \"descripcion\": 1900,\r\n    \"categoria\": \"http\",\r\n    \"precio\": 100,\r\n    \"stock\": 5,\r\n    \"fotos\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Pinceles\",\r\n    \"price\": 1900,\r\n    \"thumbnail\": \"http\",\r\n    \"stock\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/6139442853aefeac174acdbc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"6139442853aefeac174acdbc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/61d1cd98c70440c743d6ce69",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"61d1cd98c70440c743d6ce69"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "api/products/id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
+							"name": "succes",
+							"originalRequest": {
+								"method": "DELETE",
 								"header": [],
 								"body": {
 									"mode": "raw",
@@ -265,36 +820,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/products",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"products"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "api/products/id",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Pinceles\",\r\n    \"price\": 1900,\r\n    \"thumbnail\": \"http\",\r\n    \"stock\": 100\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/products/6139442853aefeac174acdbc",
+									"raw": "http://localhost:8080/api/products/61d1c947550f83c27754c78c",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -303,90 +829,93 @@
 									"path": [
 										"api",
 										"products",
-										"6139442853aefeac174acdbc"
+										"61d1c947550f83c27754c78c"
 									]
 								}
 							},
-							"response": []
-						},
-						{
-							"name": "api/products/id",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Pinceles\",\r\n    \"price\": 1900,\r\n    \"thumbnail\": \"http\",\r\n    \"stock\": 100\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
 								},
-								"url": {
-									"raw": "http://localhost:8080/api/products/6139442853aefeac174acdbc",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"products",
-										"6139442853aefeac174acdbc"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "api/products",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"firstName\": \"Stefania\",\r\n  \"lastName\": \"Di Bacco\",\r\n  \"email\": \"stefania.dibacco@gmail.com\",\r\n  \"username\": \"stefy\",\r\n  \"password\": \"Coder.159\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
 								},
-								"url": {
-									"raw": "http://localhost:8080/api/products",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"products"
-									]
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-7YWBAB2IzGLNqTtYZKn8PpOwhlc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:29:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
 								}
-							},
-							"response": []
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"objeto borrado\"\n}"
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
 				{
-					"name": "Carts",
-					"item": [
+					"name": "api/cart/listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":{\r\n        \"_id\": \"61d1bc077b6c6d3ec426d763\",\r\n        \"email\": \"meca@gmail.com\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"listar"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "api/cart/listar",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
+							"name": "success",
+							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"user\":{\r\n        \"_id\": \"618d266867b662d892c4e85e\",\r\n        \"username\": \"stefy\",\r\n        \"email\": \"stefania.dibacco@gmail.com\"\r\n    }\r\n}",
+									"raw": "{\r\n    \"user\":{\r\n        \"_id\": \"61d20603692998dc603d0b48\",\r\n        \"email\": \"stefania.dibacco@gmail.com\"\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -407,16 +936,81 @@
 									]
 								}
 							},
-							"response": []
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"105-WEDVtChbLMGPrxmTIuKahTrYEOQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:36:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"direccion\": {\n        \"calle\": \"Pringles\",\n        \"altura\": 808,\n        \"codigoPostal\": 1878,\n        \"piso\": \"\",\n        \"departamento\": \"\"\n    },\n    \"_id\": \"61d20604692998dc603d0b4a\",\n    \"userId\": \"61d20603692998dc603d0b48\",\n    \"productos\": [\n        {\n            \"_id\": \"61d1cb0c8287676d164a7b89\",\n            \"cantidad\": 3,\n            \"timeStamps\": 1641432952923\n        }\n    ],\n    \"__v\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "api/cart/agregar/id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"61d1c947550f83c27754c78c\",\r\n    \"cantidad\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/agregar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"agregar"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "api/cart/agregar/id",
-							"request": {
+							"name": "fail",
+							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"productId\":\"6139442953aefeac174acdbd\",\r\n    \"productAmount\":15\r\n   \r\n}",
+									"raw": "{\r\n    \"productId\": \"61d1cb0c8287676d164a7b89\",\r\n    \"cantidad\": \r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -437,16 +1031,50 @@
 									]
 								}
 							},
-							"response": []
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-P4x59++lZOhNkPyXfssvq8MLiG0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:35:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"product not found\"\n}"
 						},
 						{
-							"name": "api/cart/agregar/id",
-							"request": {
-								"method": "DELETE",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"productId\": \"6139442953aefeac174acdbd\",\r\n    \"productAmount\": 1\r\n}",
+									"raw": "{\r\n    \"productId\": \"61d1cb0c8287676d164a7b89\",\r\n    \"cantidad\": 3\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -454,7 +1082,103 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/cart/borrar/618d266867b662d892c4e861",
+									"raw": "http://localhost:8080/api/cart/agregar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cart",
+										"agregar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"124-6eZ8x3iJuO5JlFORBwo/+ScqRK8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:35:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Product added\",\n    \"cart\": {\n        \"direccion\": {\n            \"calle\": \"Pringles\",\n            \"altura\": 808,\n            \"codigoPostal\": 1878,\n            \"piso\": \"\",\n            \"departamento\": \"\"\n        },\n        \"_id\": \"61d20604692998dc603d0b4a\",\n        \"userId\": \"61d20603692998dc603d0b48\",\n        \"productos\": [\n            {\n                \"_id\": \"61d1cb0c8287676d164a7b89\",\n                \"cantidad\": 3,\n                \"timeStamps\": 1641432952923\n            }\n        ],\n        \"__v\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/cart/delete/id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"61d1c947550f83c27754c78c\",\r\n    \"cantidad\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/borrar/61d1bc077b6c6d3ec426d763",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"borrar",
+								"61d1bc077b6c6d3ec426d763"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"61d1c947550f83c27754c78c\",\r\n    \"cantidad\": 4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cart/borrar/61d1bc077b6c6d3ec426d763",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -464,11 +1188,630 @@
 										"api",
 										"cart",
 										"borrar",
-										"618d266867b662d892c4e861"
+										"61d1bc077b6c6d3ec426d763"
 									]
 								}
 							},
-							"response": []
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-Lfoar077M/nO/4WPryw2r7OK47Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:31:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"err\": \"Product not found\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"61d1cb0c8287676d164a7b89\",\r\n    \"cantidad\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cart/borrar/61d20603692998dc603d0b48",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cart",
+										"borrar",
+										"61d20603692998dc603d0b48"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "294"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"126-Y/oiSs8L8AJUUVuywxDV/AAU8aM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:37:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Product deleted\",\n    \"cart\": {\n        \"direccion\": {\n            \"calle\": \"Pringles\",\n            \"altura\": 808,\n            \"codigoPostal\": 1878,\n            \"piso\": \"\",\n            \"departamento\": \"\"\n        },\n        \"_id\": \"61d20604692998dc603d0b4a\",\n        \"userId\": \"61d20603692998dc603d0b48\",\n        \"productos\": [\n            {\n                \"_id\": \"61d1cb0c8287676d164a7b89\",\n                \"cantidad\": 2,\n                \"timeStamps\": 1641432952923\n            }\n        ],\n        \"__v\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "submit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart/submit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibWVjYUBnbWFpbC5jb20iLCJ1c2VySWQiOiI2MWQxYmMwNzdiNmM2ZDNlYzQyNmQ3NjMiLCJpYXQiOjE2NDEzNDc3NDksImV4cCI6MTY0MTQzNDE0OX0.knrMIwq8jhnk1ehDXasu1az1o9vtuw2KDFZuec5Tkng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "61d1c947550f83c27754c78c",
+									"type": "default"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "/C:/Users/Stefy/Pictures/mora/20201126_224455.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/imagen/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"imagen",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productId",
+											"value": "61d1c947550f83c27754c78c",
+											"type": "default"
+										},
+										{
+											"key": "foto",
+											"type": "file",
+											"src": "/C:/Users/Stefy/Pictures/mora/20201126_224455.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/imagen/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"imagen",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e-A+AEMnWF94jnm9FhgWbC0OLxZsM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 00:47:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"20201126_224455-1641430048071.jpg\",\n    \"timestamp\": 1641430048071,\n    \"_id\": \"61d63c20f9fc2a93fb6932ad\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productId",
+											"value": "61d1c947550f83c27754c78c",
+											"type": "default"
+										},
+										{
+											"key": "foto",
+											"type": "file",
+											"src": "/C:/Users/Stefy/Downloads/PROPUESTA DE CATERING Y PIZZA PARTY.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/imagen/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"imagen",
+										"upload"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-g8AmRBVVxkE4RBA2M5j/lOFu6ME\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 00:48:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"err\": \"No files extension.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibWVjYUBnbWFpbC5jb20iLCJ1c2VySWQiOiI2MWQxYmMwNzdiNmM2ZDNlYzQyNmQ3NjMiLCJpYXQiOjE2NDEzNDc3NDksImV4cCI6MTY0MTQzNDE0OX0.knrMIwq8jhnk1ehDXasu1az1o9vtuw2KDFZuec5Tkng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "61d1c947550f83c27754c78c",
+									"type": "default"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "/C:/Users/Stefy/Pictures/mora/20201126_224455.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/imagen/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"imagen",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productId",
+											"value": "61d1c947550f83c27754c78c",
+											"type": "default"
+										},
+										{
+											"key": "foto",
+											"type": "file",
+											"src": "/C:/Users/Stefy/Pictures/mora/20201126_224455.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/imagen/get",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"imagen",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 01:09:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibWVjYUBnbWFpbC5jb20iLCJ1c2VySWQiOiI2MWQxYmMwNzdiNmM2ZDNlYzQyNmQ3NjMiLCJpYXQiOjE2NDEzNDc3NDksImV4cCI6MTY0MTQzNDE0OX0.knrMIwq8jhnk1ehDXasu1az1o9vtuw2KDFZuec5Tkng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "61d1c947550f83c27754c78c",
+									"type": "default"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "/C:/Users/Stefy/Pictures/mora/20201126_224455.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/imagen/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"imagen",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productId",
+											"value": "61d1c947550f83c27754c78c",
+											"type": "default"
+										},
+										{
+											"key": "foto",
+											"type": "file",
+											"src": "/C:/Users/Stefy/Pictures/mora/20201126_224455.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/imagen/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"imagen",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e-A+AEMnWF94jnm9FhgWbC0OLxZsM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 00:47:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"url\": \"20201126_224455-1641430048071.jpg\",\n    \"timestamp\": 1641430048071,\n    \"_id\": \"61d63c20f9fc2a93fb6932ad\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productId",
+											"value": "61d1c947550f83c27754c78c",
+											"type": "default"
+										},
+										{
+											"key": "foto",
+											"type": "file",
+											"src": "/C:/Users/Stefy/Downloads/PROPUESTA DE CATERING Y PIZZA PARTY.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/imagen/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"imagen",
+										"upload"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-g8AmRBVVxkE4RBA2M5j/lOFu6ME\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jan 2022 00:48:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"err\": \"No files extension.\"\n}"
 						}
 					]
 				}
