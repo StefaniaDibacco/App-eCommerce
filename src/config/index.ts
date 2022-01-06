@@ -8,7 +8,6 @@ const venv = {
   ETHEREAL_NAME: process.env.ETHEREAL_NAME || 'Mattie Langworth',
   MONGO_ATLAS_USER: process.env.MONGO_ATLAS_USER || 'user',
   MONGO_ATLAS_PASSWORD: process.env.MONGO_ATLAS_PASSWORD || 'pasw',
-  MONGO_ATLAS_CLUSTER: process.env.MONGO_ATLAS_CLUSTER || 'clusterUrl',
   MONGO_ATLAS_SRV: process.env.MONGO_ATLAS_SRV2 || 'dbName',
   MONGO_LOCAL_DBNAME: process.env.MONGO_LOCAL_DBNAME || 'dbNameLocal',
   JWT_SECRET_KEY: process.env.JWT_SECRET_KEY || 'shhhhhh',

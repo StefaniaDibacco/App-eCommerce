@@ -1,6 +1,3 @@
-MONGO_ATLAS_USER=ponelatuya
-MONGO_ATLAS_PASSWORD=ponelatuya
-MONGO_ATLAS_CLUSTER=miclusterUrl
 MONGO_ATLAS_DBNAME=ponelatuya
 MONGO_LOCAL_DBNAME=ponelatuya
 MONGO_ATLAS_SRV2=ponelatuya
@@ -8,3 +5,5 @@ MONGO_ATLAS_SRV=ponelatuya
 ETHEREAL_EMAIL=your-email@ethereal.email
 ETHEREAL_PASSWORD=your-password
 ETHEREAL_NAME=you-ethereal-name
+TOKEN_KEEP_ALIVE=ponelatuya
+JWT_SECRET_KEY=ponelatuya
