@@ -42,10 +42,10 @@ const usersSchema = new mongoose.Schema<UserI>({
 });
 
 usersSchema.pre('save', async function (next) {
-  const user = this;
+  const user : any = this;
   const hash = await bcrypt.hash(user.password, 10);
 
-  this.password = hash;
+  user.password = hash;
   next();
 });
 
@@ -110,7 +110,7 @@ export class UsuariosAtlasDAO implements UserBaseClass {
     return result._doc;
   }
 
-  async update(id: string, data: NewUserI): Promise<UserI> {
+  async update(id: string, data: NewUserI): Promise<UserI | null> {
     return this.users.findByIdAndUpdate(id, data);
   }
 

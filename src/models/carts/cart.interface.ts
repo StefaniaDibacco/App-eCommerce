@@ -46,8 +46,10 @@ export interface CartI {
 }
 
 export interface CartBaseClass {
+  
   get(id: string): Promise<CartI>;
   createCart(userId: string): Promise<CartI>;
   addProduct(cartId: string, product: ProductCart): Promise<CartI>;
   deleteProduct(cartId: string, product: ProductCart): Promise<CartI>;
+  
 }

@@ -22,8 +22,5 @@ export interface MensajeI {
 }
 
 export interface MensajesBaseClass {
-  /* get(id?: string | undefined): Promise<UserI[]>;
-  add(data: NewUserI): Promise<UserI>;
-  update(id: string, newProductData: NewUserI): Promise<UserI>;
-  delete(id: string): Promise<void>; */
+  
 }

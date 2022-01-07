@@ -38,9 +38,11 @@ export interface ProductQuery {
 }
 
 export interface ProductBaseClass {
+  
   get(id?: string | undefined): Promise<ProductI[]>;
-  add(data: newProductI): Promise<ProductI>;
-  update(id: string, newProductData: ProductQuery): Promise<ProductI>;
+  add(data: newProductI): Promise<ProductI |null>;
+  update(id: string, newProductData: ProductQuery): Promise<ProductI | null>;
   delete(id: string): Promise<any>;
   query(options: ProductQuery): Promise<ProductI[]>;
+  
 }

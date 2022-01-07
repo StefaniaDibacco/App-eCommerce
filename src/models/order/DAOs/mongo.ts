@@ -112,7 +112,7 @@ export class OrderAtlasDAO implements OrdenBaseClass {
     /* si no existe la orden */
     if (!orden) throw new Error('Orden dont exist');
     if (orden.estado !== 'Generada') throw new Error('Orden no generada');
-    const ordenUpdate: OrdenI = await this.Order.findOneAndUpdate(
+    const ordenUpdate: OrdenI| null = await this.Order.findOneAndUpdate(
       { _id: orderId },
       { estado: 'Compledata' }
     );

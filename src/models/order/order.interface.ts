@@ -43,10 +43,12 @@ export interface NewOrden {
 }
 
 export interface OrdenBaseClass {
+  
   createOrder(carrito: CartI): Promise<OrdenI>;
   getOrder(
     userId: string,
     orderId: string
   ): Promise<OrdenI> | Promise<OrdenI[]>;
-  completeOrder(orderId: string): Promise<OrdenI>;
+  completeOrder(orderId: string): Promise<OrdenI | null>;
+
 }
