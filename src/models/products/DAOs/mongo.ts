@@ -76,7 +76,7 @@ export class ProductosAtlasDAO implements ProductBaseClass {
     }
   }
 
-  async add(data: newProductI): Promise<ProductI> {
+  async add(data: newProductI): Promise<ProductI | null> {
     if (!data.nombre || !data.precio) throw new Error('invalid data');
     const product: any = await this.productos.findOne({ nombre: data.nombre });
     let newProduct;
@@ -92,7 +92,7 @@ export class ProductosAtlasDAO implements ProductBaseClass {
     return newProduct;
   }
 
-  async update(id: string, newProductData: ProductQuery): Promise<ProductI> {
+  async update(id: string, newProductData: ProductQuery): Promise<ProductI | null> {
     return await this.productos.findByIdAndUpdate(id, newProductData);
   }
 

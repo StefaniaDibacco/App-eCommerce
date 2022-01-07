@@ -12,8 +12,5 @@ export interface ImagenI {
 }
 
 export interface ImagenBaseClass {
-  /* get(id?: string | undefined): Promise<UserI[]>;
-  add(data: NewUserI): Promise<UserI>;
-  update(id: string, newProductData: NewUserI): Promise<UserI>;
-  delete(id: string): Promise<void>; */
+  
 }

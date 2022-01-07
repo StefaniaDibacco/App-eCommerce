@@ -30,7 +30,7 @@ class prodAPI {
     return this.productos.getAll(ids);
   }
 
-  async addProduct(productData: newProductI): Promise<ProductI> {
+  async addProduct(productData: newProductI): Promise<ProductI | null> {
     const newProduct = await this.productos.add(productData);
     return newProduct;
   }
