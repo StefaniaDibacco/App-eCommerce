@@ -106,13 +106,13 @@ export class OrderAtlasDAO implements OrdenBaseClass {
     }
     return await this.Order.find(query);
   }
-  // eslint-disable-next-line lines-between-class-members
+
   async completeOrder(orderId: string) {
     const orden = await this.Order.findOne({ _id: orderId });
     /* si no existe la orden */
     if (!orden) throw new Error('Orden dont exist');
     if (orden.estado !== 'Generada') throw new Error('Orden no generada');
-    const ordenUpdate: OrdenI| null = await this.Order.findOneAndUpdate(
+    const ordenUpdate: OrdenI | null = await this.Order.findOneAndUpdate(
       { _id: orderId },
       { estado: 'Compledata' }
     );
