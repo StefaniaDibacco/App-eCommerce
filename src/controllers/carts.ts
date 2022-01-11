@@ -57,13 +57,16 @@ class Cart {
   }
 
   async submit(req: Request, res: Response) {
-    const user: any = req.user;
-    const cart = await CartAPI.getCart(user._id);
-    if (!cart.productos)
-      return res.status(400).json({ msg: 'Invalid products cart empty' });
-    const order = await OrdenApi.create(cart);
-
-    return order;
+    try {
+      const user: any = req.user;
+      const cart = await CartAPI.getCart(user._id);
+      if (!cart.productos)
+        return res.status(400).json({ msg: 'Invalid products cart empty' });
+      const order = await OrdenApi.create(cart);
+      return res.send({ order });
+    } catch (error: any) {
+      return res.send({ error: error.message });
+    }
   }
 }
 

@@ -6,4 +6,6 @@ import { checkAuthToken } from '../middleware/auth';
 const router = Router();
 
 router.get('/:orderId?', checkAuthToken, OrdenController.get);
-router.post('/', checkAuthToken, OrdenController.complete);
+router.post('/complete', checkAuthToken, OrdenController.complete);
+
+export default router;
