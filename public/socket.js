@@ -6,7 +6,6 @@ function render(data) {
   console.log(data);
   const html = data
     .map((elem, index) => {
-      /* TODO revisar que viene para poder mostrar (userId, firstName, tipo, mensaje) */
       return `<div class="mensaje" >      
         <span class='mx-2'>${elem.firstName}</span>
         <span class='mx-2'>${elem.mensaje}</span>
