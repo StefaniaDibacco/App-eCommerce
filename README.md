@@ -4,7 +4,7 @@ Aplicacion eCommerce, del curso de Backend de CoderHouse
 
 ## Installation
 
-Recuerden que deben de ejecutar [npm install](https://pip.pypa.io/en/stable/) para reconstruir los módulos de Node.
+Recuerden que deben de ejecutar **npm install** para reconstruir los módulos de Node.
 
 ```bash
 npm install
@@ -12,7 +12,7 @@ npm install
 
 ## Transpilation
 
-Para Transpilar de TypeScript a JavaScript correr [npm run build](https://pip.pypa.io/en/stable/)
+Para Transpilar de TypeScript a JavaScript correr **npm run build**
 
 ```bash
 npm run build
@@ -20,7 +20,7 @@ npm run build
 
 ## Run project
 
-Para correr el proyecto [npm run start](https://pip.pypa.io/en/stable/)
+Para correr el proyecto **npm run start**
 
 ```bash
 npm run start
@@ -28,4 +28,4 @@ npm run start
 
 ## Doc
 
-Para leer la documentacion entrar a [Doc](http://localhost:8080/api-doc)
+Para leer la documentacion entrar a **http://localhost:{PORT}/api-doc**
