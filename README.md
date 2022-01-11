@@ -2,8 +2,30 @@
 
 Aplicacion eCommerce, del curso de Backend de CoderHouse
 
-Recuerden que deben de ejecutar npm install para reconstruir los módulos de Node.
+## Installation
 
-Para transpilar typescript a javascript correr npm run build.
+Recuerden que deben de ejecutar [npm install](https://pip.pypa.io/en/stable/) para reconstruir los módulos de Node.
 
-Para leer la documentacion entrar a http://localhost:8080/api-doc
+```bash
+npm install
+```
+
+## Transpilation
+
+Para Transpilar de TypeScript a JavaScript correr [npm run build](https://pip.pypa.io/en/stable/)
+
+```bash
+npm run build
+```
+
+## Run project
+
+Para correr el proyecto [npm run start](https://pip.pypa.io/en/stable/)
+
+```bash
+npm run start
+```
+
+## Doc
+
+Para leer la documentacion entrar a [Doc](http://localhost:8080/api-doc)
